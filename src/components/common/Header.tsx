@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { AiFillFacebook, AiOutlineMail, AiOutlineClockCircle } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
-import NavigationBar from './NavigationBar'
+import { NavigationBar } from '.'
 
 export const Header = (): JSX.Element => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
@@ -27,8 +27,8 @@ export const Header = (): JSX.Element => {
 
   return (
     <>
-      <div className="border border-neutral-400 relative" ref={containerRef}>
-        <div className="px-4 py-2">
+      <div className="border border-neutral-400 relative hidden xl:block" ref={containerRef}>
+        <div className="px-4 py-1">
           <div className="flex justify-between items-center">
             <div className="flex gap-2 text-sm flex-none">
               <p className="text-neutral-500">Hỗ trợ trực tuyến</p>
