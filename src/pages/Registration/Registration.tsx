@@ -1,14 +1,17 @@
+import { MainLayout } from "../../components/Layout"
 import SignIn from "./Signin"
 import Signup from "./Signup"
 
 function Registration() {
     return (
-        <div className="container mx-auto px-14">
-            <div className="grid gap-10 mb-6 md:grid-cols-3">
-                <SignIn />
-                <Signup />
+        <MainLayout>
+            <div className="container mx-auto sm:px-5 md:px-5">
+                <div className="grid gap-10 mb-6 sm:grid-cols-2 md:grid-cols-3">
+                    <SignIn />
+                    <Signup />
+                </div>
             </div>
-        </div>
+        </MainLayout>
     )
 }
 

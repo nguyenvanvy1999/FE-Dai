@@ -36,7 +36,7 @@ function Signup() {
     }
 
     return (
-        <form className="container col-span-2 border-solid border rounded-lg border-gray-200 p-5" onSubmit={handleSubmit(onSubmit)}>
+        <form className="container col-span-1 md:col-span-2 border-solid border rounded-lg border-gray-200 p-5" onSubmit={handleSubmit(onSubmit)}>
             <div>
                 <p className="text-left font-semibold text-xl">Đăng ký</p>
                 <p className="text-green-600 mt-5">

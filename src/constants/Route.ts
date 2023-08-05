@@ -6,4 +6,5 @@ export const RoutePath = Object.freeze({
   ChiaSePage: '/chia-se',
   CongCu: '/cong-cu',
   FAQ: '/cau-hoi-thuong-gap',
+  LoginPage: '/login'
 })
