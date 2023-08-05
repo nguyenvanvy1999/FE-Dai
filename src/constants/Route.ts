@@ -9,5 +9,5 @@ export const RoutePath = Object.freeze({
   LoginPage: '/login',
   SharePostList: '/post-list',
   MyPost: '/my-post',
-  AddPost: '/post-add',
+  AddPost: '/add-post',
 })

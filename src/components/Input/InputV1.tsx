@@ -7,14 +7,15 @@ export interface InputProps {
     postNode?: ReactNode;
     value: string;
     onChange: () => void;
+    required?: boolean;
 }
 
-export default function InputV1({ label = "", placeHolder = "", type = "text", postNode, value, onChange } : InputProps) {
+export default function InputV1({ label = "", placeHolder = "", type = "text", postNode, value, onChange, required } : InputProps) {
 
     return (
         <div className="mt-5">
             {label && <label className="block mb-2 text-sm font-medium text-gray-900">
-                {label}
+                {label} <span className="text-red-600">{required && "*"}</span>
             </label>
             }
             <input
