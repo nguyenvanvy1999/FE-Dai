@@ -1,19 +1,62 @@
 import { CategoryLayout } from '../components/Layout'
+import ProductCard from '../components/ProductCard'
 import { FormEmailFields } from '../models'
 
 export default function EmailPage() {
   const tabs = [
     {
       label: 'Phổ biến',
-      content: <div>Phổ biến</div>,
+      content: (
+        <div>
+          <div className="grid grid-cols-2 gap-2">
+            <ProductCard className="col-span-2" />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+          </div>
+        </div>
+      ),
     },
     {
       label: 'Giá tăng dần',
-      content: <div>Giá tăng dần</div>,
+      content: (
+        <div>
+          <div className="grid grid-cols-2 gap-2">
+            <ProductCard className="col-span-2" />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+          </div>
+        </div>
+      ),
     },
     {
       label: 'Giá giảm dần',
-      content: <div>Giá giảm dần</div>,
+      content: (
+        <div>
+          <div className="grid grid-cols-2 gap-2">
+            <ProductCard className="col-span-2" />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+          </div>
+        </div>
+      ),
     },
   ]
   return (

@@ -4,9 +4,12 @@ export default {
   theme: {
     fontSize: {
       sm: ['15px', '22px'],
-      'min': ['10px', {
-        lineHeight: '15px',
-      }]
+      min: [
+        '10px',
+        {
+          lineHeight: '15px',
+        },
+      ],
     },
     // fontSize: {
     //   sm: ['15px', '22px'],
@@ -21,10 +24,14 @@ export default {
     },
     extend: {
       fontSize: {
+        '12px': '12px',
         '13px': '13px',
+        '14px': '14px',
         '15px': '15px',
+        '16px': '16px',
       },
       lineHeight: {
+        1: 1,
         '18px': '18px',
       },
       colors: {
@@ -39,14 +46,17 @@ export default {
         light: 'rgba(255,255,255,.15)',
         black: {
           light: '#3d464d',
+          100: '#212529',
         },
         green: {
+          100: '#67b740',
           300: '#28a745',
           400: '#21bf73',
           600: '#47991f',
         },
         yellow: {
           500: '#ffc338',
+          600: '#ffc107',
         },
         red: {
           500: '#ff2626',
@@ -63,23 +73,26 @@ export default {
         '15px': '15px',
         '34px': '34px',
         '55px': '55px',
+        '200px': '200px',
         '255px': '255px',
         '290px': '290px',
         '300px': '300px',
       },
       height: {
+        '14px': '14px',
         '15px': '15px',
         '34px': '34px',
         '42px': '42px',
         '54px': '54px',
       },
       spacing: {
+        '3px': '3px',
         '7px': '7px',
         '10px': '10px',
         '11px': '11px',
-        '22px': '22px',
         '14px': '14px',
         '15px': '15px',
+        '22px': '22px',
         '25px': '25px',
         '30px': '30px',
         '43px': '43px',
@@ -87,7 +100,10 @@ export default {
         '52px': '52px',
         '54px': '54px',
         '140px': '140px',
-        '600px': '600px'
+        '600px': '600px',
+      },
+      borderRadius: {
+        1.5: '1.5px',
       },
       zIndex: {
         100: '99999',
