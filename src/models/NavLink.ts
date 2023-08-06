@@ -13,15 +13,15 @@ export const NavLinks: NavLink[] = [
     children: [
       {
         title: 'Email',
-        path: '',
+        path: RoutePath.EmailPage,
       },
       {
         title: 'Tài khoản',
-        path: '',
+        path: RoutePath.AccountPage,
       },
       {
         title: 'Phần mềm',
-        path: '',
+        path: RoutePath.SoftwarePage,
       },
       {
         title: 'Khác',
@@ -58,7 +58,7 @@ export const NavLinks: NavLink[] = [
   },
   {
     title: 'Chia sẽ',
-    path: RoutePath.ChiaSePage,
+    path: RoutePath.SharePostList,
     children: null,
   },
   {

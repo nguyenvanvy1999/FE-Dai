@@ -7,6 +7,10 @@ import PostList from './pages/Post/PostList'
 import AddPost from './pages/Post/AddPost'
 import MyPost from './pages/Post/MyPost'
 import Stall from './pages/Stall/Stall'
+import Chatbox from './pages/Chatbox'
+import EmailPage from './pages/EmailPage'
+import AccountPage from './pages/AccountPage'
+import SoftwarePage from './pages/SoftwarePage'
 
 function App() {
   return (
@@ -30,6 +34,12 @@ function App() {
           <Route path={RoutePath.topKiosk} element={<TopKiosk />} />
           <Route path={RoutePath.complain} element={<Complain />} />
         </Route> */}
+        <Route path={RoutePath.Chatbox} element={<Chatbox />} />
+        <Route>
+          <Route path={RoutePath.EmailPage} element={<EmailPage />} />
+          <Route path={RoutePath.AccountPage} element={<AccountPage />} />
+          <Route path={RoutePath.SoftwarePage} element={<SoftwarePage />} />
+        </Route>
       </Routes>
     </>
   )
