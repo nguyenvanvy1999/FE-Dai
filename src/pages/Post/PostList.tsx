@@ -6,9 +6,11 @@ import { FaRegComments } from "react-icons/fa"
 import Pagination from "../../components/Pagintion"
 import SearchBox from "../../components/Input/SearchBox"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 function PostList() {
     const [searchText, setSearchText] = useState("");
+    const navigate = useNavigate()
     return (
         <MainLayout>
             <div className="container mx-auto sm:px-5 md:px-5 mb-5">
@@ -17,7 +19,7 @@ function PostList() {
                 <div className="grid grid-cols-1 lg:grid-cols-3 mt-5 gap-5">
                     <div className="col-span-1 p-3 pl-0">
                         <SearchBox placeHolder={"Tìm bài viết"} value={searchText} onChange={(e: any) => { setSearchText(e.target.value) }} />
-                        <Button variant="primary" className="w-full mt-5 text-left" type="submit">
+                        <Button variant="primary" className="w-full mt-5 text-left" onClick={() => navigate('/my-post')}>
                             <span className="text-white">Quản lý bài viết</span>
                         </Button>
                         <div className="border border-gray-400 rounded-lg mt-5 p-5">

@@ -6,6 +6,7 @@ import Support from './pages/Support'
 import PostList from './pages/Post/PostList'
 import AddPost from './pages/Post/AddPost'
 import MyPost from './pages/Post/MyPost'
+import Chatbox from './pages/Chatbox'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path={RoutePath.SharePostList} element={<PostList />} />
         <Route path={RoutePath.AddPost} element={<AddPost />} />
         <Route path={RoutePath.MyPost} element={<MyPost />} />
+        <Route path={RoutePath.Chatbox} element={<Chatbox />} />
       </Routes>
     </>
   )

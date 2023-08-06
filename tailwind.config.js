@@ -4,6 +4,9 @@ export default {
   theme: {
     fontSize: {
       sm: ['15px', '22px'],
+      'min': ['10px', {
+        lineHeight: '15px',
+      }]
     },
     container: {
       screens: {
@@ -62,6 +65,7 @@ export default {
         '52px': '52px',
         '54px': '54px',
         '140px': '140px',
+        '600px': '600px'
       },
       zIndex: {
         100: '999999',

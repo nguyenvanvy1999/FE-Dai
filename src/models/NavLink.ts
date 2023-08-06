@@ -58,7 +58,7 @@ export const NavLinks: NavLink[] = [
   },
   {
     title: 'Chia sẽ',
-    path: RoutePath.ChiaSePage,
+    path: RoutePath.SharePostList,
     children: null,
   },
   {

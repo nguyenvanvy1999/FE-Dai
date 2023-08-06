@@ -3,12 +3,12 @@ import SearchBox from "../../components/Input/SearchBox"
 import { useState } from "react";
 import SelectV1 from "../../components/Input/Select";
 import Button from "../../components/Button";
+import { useNavigate } from "react-router-dom";
 
 const options = [
     {
         label: 'Tất cả',
-        value: 'all',
-        selected: true
+        value: '',
     },
     {
         label: 'Chờ duyệt',
@@ -19,6 +19,8 @@ const options = [
 function MyPost() {
     const [searchText, setSearchText] = useState("");
     const [selectValue, setSelectValue] = useState("");
+    const navigate = useNavigate();
+
     return (
         <MainLayout>
             <div className="container mx-auto sm:px-5 md:px-5">
@@ -29,7 +31,7 @@ function MyPost() {
                     </div>
                     <div className="flex items-center justify-between lg:justify-start mt-5 lg:mt-0">
                         <SelectV1 value={selectValue} onChange={(e: any) => { setSelectValue(e.target.value); } } options={options} className="ml-0 lg:ml-8 w-full lg:w-28" />
-                        <Button variant="primary" className="w-48 g:w-32 ml-4 lg:ml-8 border border-solid border-green-500 text-center" type="submit">
+                        <Button variant="primary" className="w-48 g:w-32 ml-4 lg:ml-8 border border-solid border-green-500 text-center" onClick={() => navigate('/add-post')}>
                             <span className="text-white">Tạo bài mới</span>
                         </Button>
                     </div>

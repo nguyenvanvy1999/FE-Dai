@@ -11,7 +11,6 @@ const options = [
     {
         label: 'Tất cả',
         value: '',
-        selected: true
     },
     {
         label: 'Chờ duyệt',

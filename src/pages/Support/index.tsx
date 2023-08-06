@@ -93,7 +93,7 @@ function Support() {
                                 name="content"
                                 control={control}
                                 render={({ field }) => {
-                                    return <TextAreaV1 label="Nội dung" onChange={field.onChange} value={field.value} />;
+                                    return <TextAreaV1 className="mt-5" label="Nội dung" onChange={field.onChange} value={field.value} />;
                                 }}
                             />
                             <Button variant="primary" className="w-32 mt-5 text-center" type="submit">

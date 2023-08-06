@@ -10,4 +10,5 @@ export const RoutePath = Object.freeze({
   SharePostList: '/post-list',
   MyPost: '/my-post',
   AddPost: '/add-post',
+  Chatbox: '/chat-box'
 })
