@@ -2,6 +2,12 @@
 export default {
   content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
   theme: {
+    fontSize: {
+      sm: ['15px', '22px'],
+      'min': ['10px', {
+        lineHeight: '15px',
+      }]
+    },
     // fontSize: {
     //   sm: ['15px', '22px'],
     // },
@@ -81,6 +87,7 @@ export default {
         '52px': '52px',
         '54px': '54px',
         '140px': '140px',
+        '600px': '600px'
       },
       zIndex: {
         100: '99999',

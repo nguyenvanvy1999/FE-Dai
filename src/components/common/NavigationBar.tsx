@@ -1,7 +1,8 @@
 import { NavLink, NavLinks, NavLinksMobile } from '../../models'
 import Logo from '../../assets/images/logo.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { AiOutlineUser } from 'react-icons/ai'
+import { FaRegComments } from 'react-icons/fa'
 import { HiOutlineBars3BottomLeft } from 'react-icons/hi2'
 import { MdKeyboardArrowDown } from 'react-icons/md'
 import { useEffect, useState } from 'react'
@@ -9,6 +10,7 @@ import { RoutePath } from '../../constants'
 export function NavigationBar() {
   const [openItems, setOpenItems] = useState<{ [key: string]: boolean }>({})
   const [isOpenMenuBar, setIsOpenMenuBar] = useState<boolean>(false)
+  const navigate = useNavigate();
 
   const handleShowMenu = (item: NavLink) => {
     setOpenItems((prevOpenItems) => ({
@@ -81,10 +83,18 @@ export function NavigationBar() {
             ))}
           </ul>
         </div>
-        <div className="active:bg-light p-4 h-42px relative flex items-center cursor-pointer">
-          <AiOutlineUser className="fill-white w-10 h-9 " />
-          <div className="bg-white rounded-full text-black-light text-center absolute top-1 right-1 p-5px h-15px w-15px text-xs font-medium items-center justify-center hidden xl:flex">
-            0
+        <div className='flex'>
+          <div className="active:bg-light p-4 h-42px relative flex items-center cursor-pointer" onClick={() => navigate("/chat-box")}>
+            <FaRegComments className="fill-white w-10 h-9 " />
+            <div className="bg-white rounded-full text-black-light text-center absolute top-1 right-1 p-5px h-15px w-15px text-xs font-medium items-center justify-center hidden xl:flex">
+              0
+            </div>
+          </div>
+          <div className="active:bg-light p-4 h-42px relative flex items-center cursor-pointer">
+            <AiOutlineUser className="fill-white w-10 h-9 " />
+            <div className="bg-white rounded-full text-black-light text-center absolute top-1 right-1 p-5px h-15px w-15px text-xs font-medium items-center justify-center hidden xl:flex">
+              0
+            </div>
           </div>
         </div>
       </nav>
