@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import { RoutePath } from './constants'
-import HomePage from './pages/HomePage'
+import HomePage from './pages/Home/HomePage'
 import Registration from './pages/Registration/Registration'
 import Support from './pages/Support'
 import PostList from './pages/Post/PostList'

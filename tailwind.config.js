@@ -4,6 +4,8 @@ export default {
   theme: {
     fontSize: {
       sm: ['15px', '22px'],
+      md: ['20px', '26px'],
+      lg: ['28px', '34px'],
       'min': ['10px', {
         lineHeight: '15px',
       }]
