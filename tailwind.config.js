@@ -10,6 +10,8 @@ export default {
           lineHeight: '15px',
         },
       ],
+      md: ['20px', '26px'],
+      lg: ['28px', '34px'],
     },
     // fontSize: {
     //   sm: ['15px', '22px'],
