@@ -10,4 +10,16 @@ export const RoutePath = Object.freeze({
   SharePostList: '/post-list',
   MyPost: '/my-post',
   AddPost: '/post-add',
+
+  // Stall
+  stall: '/stall',
+  sales: '/stall/sales',
+  orderManage: '/stall/order-manager',
+  productOrders: '/stall/product-orders',
+  preOrders: '/stall/pre-orders',
+  complain: '/stall/complain',
+  replyComment: '/stall/reply-comment',
+  promotion: '/stall/promotion',
+  resellerManage: '/stall/resellerManage',
+  topKiosk: '/stall/top-kiosk',
 })
