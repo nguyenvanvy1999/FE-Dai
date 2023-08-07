@@ -2,7 +2,7 @@ import CategoryItem from './CategoryItem';
 
 interface CategoryListProps {
   heading: string;
-  items: CategoryProduct[]; // Thêm prop items với kiểu dữ liệu là một mảng các CategoryProduct
+  items: CategoryProduct[];
 }
 
 interface CategoryProduct {
@@ -17,9 +17,9 @@ const CategoryList: React.FC<CategoryListProps> = ({ heading, items }) => {
       <div className="title text-green-400 text-md font-bold uppercase text-center relative pt-2 pb-6">
         {heading}
       </div>
-      <div className="grid grid-cols-4 gap-2 mb-10">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 mb-10">
         {items.map((product, index) => (
-          <CategoryItem
+          <CategoryItem 
             key={index}
             title={product.title}
             imageSrc={product.imageSrc}
