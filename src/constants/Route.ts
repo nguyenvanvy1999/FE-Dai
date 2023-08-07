@@ -27,4 +27,9 @@ export const RoutePath = Object.freeze({
   EmailPage: '/danh-muc/email',
   AccountPage: '/danh-muc/tai-khoan',
   SoftwarePage: '/danh-muc/phan-mem',
+  ProductOtherPage: '/danh-muc/danh-muc-khac',
+  IncrementInteractPage: '/danh-muc/dich-vu-tuong-tac',
+  BlockchainPage: '/danh-muc/dich-vu-blockchain',
+  ServiceSoftwarePage: '/danh-muc/dich-vu-phan-mem',
+  ServiceOtherPage: '/danh-muc/dich-vu-khac',
 })

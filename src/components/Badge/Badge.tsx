@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-type BadgeVariant = 'primary' | 'secondary' | 'success' | 'danger' | 'warning'
+type BadgeVariant = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'new'
 
 export interface BadgeProps {
   variant?: BadgeVariant
@@ -21,6 +21,9 @@ export default function Badge({ children, variant, className }: BadgeProps) {
       break
     case 'warning':
       className += ' bg-yellow-300'
+      break
+    case 'new':
+      className += ' bg-blue-500'
       break
     default:
       className += ' bg-green-100'

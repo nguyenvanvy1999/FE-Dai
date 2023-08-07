@@ -1,19 +1,20 @@
-import { CategoryLayout } from '../components/Layout'
-import { FormAccountFields } from '../models'
+import { CategoryLayout } from '../../components/Layout'
+import ProductList from '../../components/ProductList'
+import { FormAccountFields } from '../../models'
 
 export default function AccountPage() {
   const tabs = [
     {
       label: 'Phổ biến',
-      content: <div>Phổ biến</div>,
+      content: <ProductList />,
     },
     {
       label: 'Giá tăng dần',
-      content: <div>Giá tăng dần</div>,
+      content: <ProductList />,
     },
     {
       label: 'Giá giảm dần',
-      content: <div>Giá giảm dần</div>,
+      content: <ProductList />,
     },
   ]
   return (
@@ -25,8 +26,6 @@ export default function AccountPage() {
       contentNotification="Đối với gian hàng không trùng, chúng tôi
 cam kết sản phẩm được bán ra 1 lần duy nhất trên hệ thống, tránh
 trường hợp sản phẩm đó được bán nhiều lần."
-    >
-      Account Page
-    </CategoryLayout>
+    />
   )
 }
