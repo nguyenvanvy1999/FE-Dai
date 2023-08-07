@@ -6,7 +6,7 @@ import Sales from './StallComponents/Sales'
 const Stall = () => {
   const [currentComponent, setCurrentComponent] = useState(<Sales />)
   return (
-    <div className="flex flex-row bg-[#c9cfd6] h-screen w-screen overflow-hidden">
+    <div className="flex flex-row bg-[#c9cfd6] min-h-screen w-screen overflow-hidden">
       <SideBar setCurrentComponent={setCurrentComponent} />
       <div className="w-full">
         <Header />
