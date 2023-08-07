@@ -8,7 +8,7 @@ export interface InputProps {
   value: string
   onChange: (e: ChangeEvent<HTMLInputElement>) => void
   required?: boolean
-  className: string
+  className?: string
 }
 
 export default function InputV1({
