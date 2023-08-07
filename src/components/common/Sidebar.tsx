@@ -15,9 +15,10 @@ const schema = yup.object().shape({
 
 interface SidebarProps {
   formFields: FormField[]
+  className: string
 }
 
-export default function Sidebar({ formFields }: SidebarProps) {
+export default function Sidebar({ formFields, className }: SidebarProps) {
   const {
     handleSubmit,
     control,
@@ -32,7 +33,7 @@ export default function Sidebar({ formFields }: SidebarProps) {
 
   return (
     <>
-      <div className="border-2 border-grey-200 mr-30px w-255px ">
+      <div className={`${className} border-2 border-grey-200 mr-30px w-255px`}>
         <div>
           <div className="px-5 pt-5 border-b-2 border-grey-100">
             <h4 className="mb-5 font-bold text-xl">Bộ lọc</h4>
