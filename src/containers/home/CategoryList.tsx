@@ -1,14 +1,14 @@
-import CategoryItem from './CategoryItem';
+import CategoryItem from './CategoryItem'
 
 interface CategoryListProps {
-  heading: string;
-  items: CategoryProduct[];
+  heading: string
+  items: CategoryProduct[]
 }
 
 interface CategoryProduct {
-  title: string;
-  imageSrc: string;
-  description: string;
+  title: string
+  imageSrc: string
+  description: string
 }
 
 const CategoryList: React.FC<CategoryListProps> = ({ heading, items }) => {
@@ -19,7 +19,7 @@ const CategoryList: React.FC<CategoryListProps> = ({ heading, items }) => {
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 mb-10">
         {items.map((product, index) => (
-          <CategoryItem 
+          <CategoryItem
             key={index}
             title={product.title}
             imageSrc={product.imageSrc}
@@ -28,7 +28,7 @@ const CategoryList: React.FC<CategoryListProps> = ({ heading, items }) => {
         ))}
       </div>
     </div>
-  );
+  )
 }
 
-export default CategoryList;
+export default CategoryList
