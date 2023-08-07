@@ -1,0 +1,10 @@
+.slick-slide {
+    margin-right: 8px !important;
+}  
+.slick-slider {
+    overflow: hidden !important; 
+    height: 550px !important;
+}
+.slick-list {
+    margin: 0 -30px !important;
+}

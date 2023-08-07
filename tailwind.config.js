@@ -2,7 +2,8 @@
 export default {
   content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    fontSize: {
+    fontSize: {  
+      xs: ['13px', '18px'],
       sm: ['15px', '22px'],
       min: [
         '10px',
