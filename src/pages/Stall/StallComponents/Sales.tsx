@@ -29,8 +29,10 @@ function Sales() {
   return (
     <div className="m-4">
       <div className="flex mb-3">
-        <div style={{ fontSize: '18px' }} className="bg-[#ffff] w-1/4 h-28 rounded-md p-3">
-          <p className="text-gray-500">Số đơn hàng</p>
+        <div className="bg-[#ffff] w-1/4 h-28 rounded-md p-3">
+          <p style={{ fontSize: '18px' }} className="text-gray-500">
+            Số đơn hàng
+          </p>
           <div className="flex mt-2 items-center">
             <FaRegClock size={28} />
             <span style={{ fontSize: '30px' }} className="ml-3 font-bold">
@@ -59,15 +61,19 @@ function Sales() {
         </div>
       </div>
 
-      <div className="min-h-fit text-center">
-        <div style={{ fontSize: '21px' }} className="text-xl font-bold p-2 rounded ">
+      <div className="min-h-fit">
+        <div style={{ fontSize: '21px' }} className="text-xl text-center font-bold p-2 rounded ">
           Kinh doanh tháng 8/2023
         </div>
-        <button className="bg-white text-black-light text-center">8/2023</button>
+        <div className="text-center">
+          <button className="bg-white text-black-light text-center">8/2023</button>
+        </div>
 
         <div className="flex mb-3 justify-center mt-4">
-          <div style={{ fontSize: '18px' }} className="bg-[#ffff] w-1/4 h-28 rounded-md p-3">
-            <p className="text-gray-500">Số đơn hàng</p>
+          <div className="bg-[#ffff] w-1/4 h-28 rounded-md p-3">
+            <span style={{ fontSize: '18px' }} className="text-gray-500">
+              Số đơn hàng
+            </span>
             <div className="flex mt-2 items-center">
               <FaRegClock size={28} />
               <span style={{ fontSize: '30px' }} className="ml-3 font-bold">

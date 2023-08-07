@@ -1,10 +1,83 @@
+import { Button, Table } from 'antd'
+
 function OrderManage() {
+  const dataSource = [
+    {
+      key: '1',
+      name: 'Mike',
+      age: 32,
+      address: '10 Downing Street',
+    },
+    {
+      key: '2',
+      name: 'John',
+      age: 42,
+      address: '10 Downing Street',
+    },
+  ]
+
+  const columns = [
+    {
+      title: 'Thao tác',
+      dataIndex: 'name',
+      key: 'name',
+    },
+    {
+      title: 'Tên gian hàng',
+      dataIndex: 'age',
+      key: 'age',
+    },
+    {
+      title: 'Loại',
+      dataIndex: 'address',
+      key: 'address',
+    },
+    {
+      title: 'Trùng',
+      dataIndex: 'address',
+      key: 'address',
+    },
+    {
+      title: 'Reseller',
+      dataIndex: 'address',
+      key: 'address',
+    },
+    {
+      title: 'Đơn giá',
+      dataIndex: 'address',
+      key: 'address',
+    },
+    {
+      title: 'Sàn',
+      dataIndex: 'address',
+      key: 'address',
+    },
+    {
+      title: 'Kho',
+      dataIndex: 'address',
+      key: 'address',
+    },
+    {
+      title: 'Ngày tạo',
+      dataIndex: 'address',
+      key: 'address',
+    },
+    {
+      title: 'Trạng thái',
+      dataIndex: 'address',
+      key: 'address',
+    },
+  ]
   return (
-    <div className="ml-4 mt-4 h-full min-h-full">
-      <div className="flex mb-3">
-        <div className="bg-[#ffff] w-1/4 h-32">Số đơn hàng</div>
-        <div className="bg-[#ffff] ml-4 w-1/4 h-32">Doanh số</div>
+    <div className="m-4 bg-[#ffff] pt-1">
+      <div className="flex mb-3 mt-3 items-center justify-between">
+        <p className="text-3xl">Gian hàng</p>
+        <Button type="primary" className="bg-blue-700 mr-3">
+          Thêm mới
+        </Button>
       </div>
+      <span>Bạn được tạo tối đa 5 gian hàng</span>
+      <Table dataSource={dataSource} columns={columns} />
     </div>
   )
 }
