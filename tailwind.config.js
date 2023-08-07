@@ -91,6 +91,7 @@ export default {
         '27px': '27px',
         '34px': '34px',
         '42px': '42px',
+        '43px': '43px',
         '54px': '54px',
         '100vh': '100vh',
       },
@@ -110,6 +111,7 @@ export default {
         '52px': '52px',
         '54px': '54px',
         '140px': '140px',
+        '300px': '300px',
         '600px': '600px',
       },
       borderRadius: {
