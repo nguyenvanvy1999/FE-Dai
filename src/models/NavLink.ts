@@ -25,7 +25,7 @@ export const NavLinks: NavLink[] = [
       },
       {
         title: 'Khác',
-        path: '',
+        path: RoutePath.ProductOtherPage,
       },
     ],
   },
@@ -35,19 +35,19 @@ export const NavLinks: NavLink[] = [
     children: [
       {
         title: 'Tăng tương tác',
-        path: '',
+        path: RoutePath.IncrementInteractPage,
       },
       {
         title: 'Blockchain',
-        path: '',
+        path: RoutePath.BlockchainPage,
       },
       {
         title: 'Dịch vụ phần mềm',
-        path: '',
+        path: RoutePath.ServiceSoftwarePage,
       },
       {
         title: 'Dịch vụ khác',
-        path: '',
+        path: RoutePath.ServiceOtherPage,
       },
     ],
   },
