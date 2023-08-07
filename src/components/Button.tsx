@@ -13,10 +13,10 @@ export interface ButtonProps {
 export default function Button({ onClick, children, variant, className, type = "button" }: ButtonProps) {
   switch (variant) {
     case 'primary':
-      className += ' bg-green-400'
+      className += ' bg-green-400 text-white'
       break
     case 'success':
-      className += ' bg-green-600'
+      className += ' bg-green-600 text-white'
       break
     case 'text':
       className += 'bg-transparent text-gray-500'

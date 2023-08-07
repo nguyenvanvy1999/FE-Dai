@@ -27,4 +27,12 @@ export const RoutePath = Object.freeze({
   EmailPage: '/danh-muc/email',
   AccountPage: '/danh-muc/tai-khoan',
   SoftwarePage: '/danh-muc/phan-mem',
+
+  // User Information
+  UserInformationPage: '/thong-tin',
+  OrderItemPage: '/orders-buy',
+  WishListPage: '/wish-list',
+  PaymentsPage: '/payments',
+  Reseller: '/reseller',
+  ChangePassword: '/change-password',
 })

@@ -11,6 +11,7 @@ import Chatbox from './pages/Chatbox'
 import EmailPage from './pages/EmailPage'
 import AccountPage from './pages/AccountPage'
 import SoftwarePage from './pages/SoftwarePage'
+import UserInformation from './pages/Users/UserInformation'
 
 function App() {
   return (
@@ -39,6 +40,10 @@ function App() {
           <Route path={RoutePath.EmailPage} element={<EmailPage />} />
           <Route path={RoutePath.AccountPage} element={<AccountPage />} />
           <Route path={RoutePath.SoftwarePage} element={<SoftwarePage />} />
+        </Route>
+        {/* User information region */}
+        <Route>
+          <Route path={RoutePath.UserInformationPage} element={<UserInformation />} />
         </Route>
       </Routes>
     </>
