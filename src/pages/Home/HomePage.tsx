@@ -1,5 +1,7 @@
 import { MainLayout } from '../../components/Layout';
-import CategoryList from './CategoryList';
+import CategoryList from './Category/CategoryList';
+import Description from './Description/Description'; 
+import Shortcuts from './Shortcuts/Shortcuts';
 
 function HomePage() {
   const categoryProducts = [
@@ -50,9 +52,11 @@ function HomePage() {
 
   return (
     <MainLayout>
-      <div className="h-108">
+      <div className="h-90">
         <CategoryList heading="-- DANH SÁCH SẢN PHẨM --" items={categoryProducts} />
-        <CategoryList heading="-- DANH SÁCH DỊCH VỤ  --" items={categoryServices} />
+        <CategoryList heading="-- DANH SÁCH DỊCH VỤ  --" items={categoryServices} />   
+        <Shortcuts />
+        <Description />
       </div>
     </MainLayout>
   );
