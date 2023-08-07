@@ -13,6 +13,7 @@ import AccountPage from './pages/AccountPage'
 import SoftwarePage from './pages/SoftwarePage'
 import UserInformation from './pages/Users/UserInformation'
 import OderItem from './pages/Users/OrderItem'
+import Payment from './pages/Users/Payment'
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
         <Route>
           <Route path={RoutePath.UserInformationPage} element={<UserInformation />} />
           <Route path={RoutePath.OrderItemPage} element={<OderItem />} />
+          <Route path={RoutePath.PaymentsPage} element={<Payment />} />
         </Route>
       </Routes>
     </>
