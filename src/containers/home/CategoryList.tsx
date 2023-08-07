@@ -13,7 +13,7 @@ interface CategoryProduct {
 
 const CategoryList: React.FC<CategoryListProps> = ({ heading, items }) => {
   return (
-    <div className="category-list">
+    <div className="category-list pt-10px">
       <div className="title text-green-400 text-md font-bold uppercase text-center relative pt-2 pb-6">
         {heading}
       </div>
