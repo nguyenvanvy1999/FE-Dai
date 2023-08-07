@@ -1,10 +1,8 @@
-import React from 'react'
 
-interface ShortcutItemProps {
-  heading: string
-}
 
-function ShortcutItem(props: ShortcutItemProps) {
+
+
+function ShortcutItem() {
   return (
     <div className="w-full bg-white border border-gray-200 rounded-sm p-4">
       <div className="image">

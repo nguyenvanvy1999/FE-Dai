@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import ShortcutItem from './ShortcutItem'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
@@ -56,12 +56,12 @@ function Shortcuts() {
       </div>
       <div>
         <Slider {...settings} ref={sliderRef}>
-          <ShortcutItem heading="Item 1" />
-          <ShortcutItem heading="Item 2" />
-          <ShortcutItem heading="Item 3" />
-          <ShortcutItem heading="Item 4" />
-          <ShortcutItem heading="Item 5" />
-          <ShortcutItem heading="Item 6" />
+          <ShortcutItem />
+          <ShortcutItem />
+          <ShortcutItem />
+          <ShortcutItem />
+          <ShortcutItem />
+          <ShortcutItem />
         </Slider>
       </div>
     </>
