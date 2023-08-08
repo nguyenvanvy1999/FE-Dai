@@ -1,23 +1,16 @@
 import { MainLayout } from '../../components/Layout'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import './product-detail.css'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { useState } from 'react'
 import Shortcuts from '../../components/Slider/Slider'
+import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai'
 
 type Tab = 'mota' | 'reviews' | 'api'
 
 function ProductDetail() {
   const [quantity, setQuantity] = useState(1)
   const [activeTab, setActiveTab] = useState<Tab>('mota')
-
-
-
-
-
-
 
   const handleTabClick = (tab: Tab) => {
     setActiveTab(tab)
@@ -31,6 +24,11 @@ function ProductDetail() {
 
   const increaseQuantity = () => {
     setQuantity(quantity + 1)
+  }
+
+  const [activeHeart, setActiveHeart] = useState<boolean>(false)
+  const handleActiveHeart = () => {
+    setActiveHeart(!activeHeart)
   }
   return (
     <MainLayout>
@@ -49,8 +47,9 @@ function ProductDetail() {
             data-toggle="tooltip"
             title=""
             data-original-title="Yêu thích"
+            onClick={handleActiveHeart}
           >
-            <FontAwesomeIcon icon={faHeart} className="text-red-500" />
+            {activeHeart ? <AiFillHeart size={20} /> : <AiOutlineHeart size={20} />}
           </button>
         </div>
         <div className="col-span-1">
@@ -744,11 +743,10 @@ function ProductDetail() {
             </div>
           )}
         </div>
-      </div> 
-      <Shortcuts heading='Sản phẩm tương tự'/>
+      </div>
+      <Shortcuts heading="Sản phẩm tương tự" />
     </MainLayout>
   )
 }
 
 export default ProductDetail
-
