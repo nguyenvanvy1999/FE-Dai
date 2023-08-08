@@ -95,16 +95,14 @@ function PreOrders() {
   ]
   return (
     <div className="m-4 max-w-full bg-slate-50">
-      <div className="flex mb-3 mt-3 items-center justify-between">
-        <div className="">
-          <p>Đơn hàng đặt trước</p>
-          <div className="flex">
-            <Input />
-          </div>
+      <p className="text-md	font-bold	mb-2">Đơn hàng đặt trước</p>
+      <div className="mb-3 mt-3 ">
+        <div className="flex w-1/3 items-center">
+          <Input className="w-1/2 h-10 mr-5" placeholder="Nhập mã đơn hàng" />
+          <Button className="bg-green-300 hover:bg-green-200 hover:text-black text-white items-center h-10">
+            <span>Tìm đơn hàng</span>
+          </Button>
         </div>
-        <Button className="bg-green-300 mr-3 hover:bg-green-200 hover:text-black text-white mt-4">
-          Tìm đơn hàng
-        </Button>
       </div>
       <span className="text-red-500">
         * Thời gian hoàn thành đơn hàng tính bằng ngày, trong thời gian đó, nếu kho hàng đủ số lượng

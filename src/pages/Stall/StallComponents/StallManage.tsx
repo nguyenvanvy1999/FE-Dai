@@ -1,6 +1,8 @@
 import { Button, Table } from 'antd'
+import { useState } from 'react'
+import ModalAddStall from '../Modal/ModalAddStall'
 
-function OrderManage() {
+function StallManage() {
   const dataSource = [
     {
       key: '1',
@@ -68,18 +70,29 @@ function OrderManage() {
       key: 'address',
     },
   ]
+
+  const [isOpenModalAddStall, setIsOpenModalAddStall] = useState(false)
+
   return (
     <div className="m-4 bg-[#ffff] pt-1">
       <div className="flex mb-3 mt-3 items-center justify-between">
-        <p className="text-3xl">Gian hàng</p>
-        <Button type="primary" className="bg-blue-700 mr-3">
+        <p className="text-md	font-bold	mb-2">Gian hàng</p>
+        <Button
+          type="primary"
+          className="bg-blue-700 mr-3"
+          onClick={() => setIsOpenModalAddStall(true)}
+        >
           Thêm mới
         </Button>
       </div>
       <span>Bạn được tạo tối đa 5 gian hàng</span>
       <Table dataSource={dataSource} columns={columns} />
+      <ModalAddStall
+        isOpenModalAddStall={isOpenModalAddStall}
+        setIsOpenModalAddStall={setIsOpenModalAddStall}
+      />
     </div>
   )
 }
 
-export default OrderManage
+export default StallManage

@@ -1,4 +1,4 @@
-import { Button, Input, Select, Table } from 'antd'
+import { Button, Form, Input, Select, Table } from 'antd'
 
 function ProductOrders() {
   const dataSource = [
@@ -84,19 +84,26 @@ function ProductOrders() {
     },
   ]
   return (
-    <div className="m-4 max-w-full bg-slate-50">
-      <div className="flex mb-3 mt-3 items-center justify-between">
-        <div className="">
-          <p>Đơn hàng dịch vụ</p>
-          <div className="flex">
-            <Input />
-            <Input />
-            <Select />
-          </div>
+    <div className="m-4 w-full bg-slate-50">
+      <div className=" mb-3 mt-3 items-center justify-between">
+        <p className="text-md	font-bold	mb-2 ">Đơn hàng sản phẩm</p>
+
+        <div className="flex w-full">
+          <Form className="flex mr-3 items-center">
+            <Form.Item className="mr-3">
+              <Input size="large" placeholder="Nhập mã đơn hàng" />
+            </Form.Item>
+            <Form.Item className="mr-3">
+              <Input size="large" placeholder="Nhập tên người mua" />
+            </Form.Item>
+            <Form.Item>
+              <Select />
+            </Form.Item>
+          </Form>
+          <Button className="bg-green-300 mr-3 hover:bg-green-200 hover:text-black text-white h-full">
+            Tìm đơn hàng
+          </Button>
         </div>
-        <Button className="bg-green-300 mr-3 hover:bg-green-200 hover:text-black text-white mt-4">
-          Tìm đơn hàng
-        </Button>
       </div>
       <Table indentSize={15} className="max-w-full" dataSource={dataSource} columns={columns} />
     </div>

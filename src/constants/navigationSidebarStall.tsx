@@ -9,7 +9,7 @@ import {
   FaArrowUp,
 } from 'react-icons/fa'
 import Sales from '../pages/Stall/StallComponents/Sales'
-import OrderManage from '../pages/Stall/StallComponents/OrderManage'
+import OrderManage from '../pages/Stall/StallComponents/StallManage'
 import ProductOrders from '../pages/Stall/StallComponents/ProductOrders'
 import PreOrders from '../pages/Stall/StallComponents/PreOrders'
 import Complain from '../pages/Stall/StallComponents/Complain'
@@ -20,14 +20,14 @@ import TopKiosk from '../pages/Stall/StallComponents/TopKiosk'
 export const DASHBOARD_SIDEBAR_STALL = [
   {
     key: 'sales',
-    label: 'sales',
+    label: 'Sales',
     path: '/stall/sales',
     icon: <FaClipboardList />,
     component: <Sales />,
   },
   {
     key: 'orderManage',
-    label: 'Quản lý đơn hàng',
+    label: 'Quản lý gian hàng',
     path: '/stall/order-manager',
     icon: <FaFileInvoiceDollar />,
     component: <OrderManage />,
@@ -48,35 +48,35 @@ export const DASHBOARD_SIDEBAR_STALL = [
   },
   {
     key: 'complain',
-    label: 'Khieu nai',
+    label: 'Khiếu nại',
     path: '/stall/complain',
     icon: <FaBug />,
     component: <Complain />,
   },
   {
     key: 'resellerManage',
-    label: 'Quan ly reseller',
+    label: 'Quản lý Reseller',
     path: '/stall/resellerManage',
     icon: <FaUsers />,
     component: <ResellerManage />,
   },
   {
     key: 'replyComment',
-    label: 'Danh gia',
+    label: 'Đánh giá',
     path: '/stall/reply-comment',
     icon: <FaComment />,
     component: <ReplyComment />,
   },
   {
     key: 'promotion',
-    label: 'Ma giam gia',
+    label: 'Mã giảm giá',
     path: '/stall/promotion',
     icon: <FaDollarSign />,
     component: <Promotion />,
   },
   {
     key: 'topKiosk',
-    label: 'Gian hang top 1',
+    label: 'Gian hàng top 1',
     path: '/stall/top-kiosk',
     icon: <FaArrowUp />,
     component: <TopKiosk />,
