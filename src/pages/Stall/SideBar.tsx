@@ -8,7 +8,7 @@ type Props = {
 }
 export default function SideBar({ setCurrentComponent }: Props) {
   return (
-    <div className="flex flex-col bg-slate-800 p-3 w-60 text-white">
+    <div className="flex flex-col bg-slate-800 p-3 w-64 text-white ">
       <div className="flex items-center gap-2 pb-3">
         <MdIntegrationInstructions fontSize={30} />
         <span className="text-neutral-50 text-lg">taphoammo.net</span>
