@@ -4,7 +4,8 @@ import HomePage from './pages/Home/HomePage'
 import ProductDetail from './pages/Product/ProductDetail'
 import Registration from './pages/Registration/Registration'
 import Support from './pages/Support' 
-import FAQ from './pages/FAQ/FAQ' 
+import FAQ from './pages/FAQ/FAQ'  
+import Authen2FA from './pages/Authen2FA/Authen2FA' 
 import PostList from './pages/Post/PostList'
 import AddPost from './pages/Post/AddPost'
 import MyPost from './pages/Post/MyPost'
@@ -28,6 +29,7 @@ function App() {
       <Routes>
         <Route path={RoutePath.HomePage} element={<HomePage />} /> 
         <Route path={RoutePath.FAQ} element={<FAQ />} />
+        <Route path={RoutePath.Authen2FA} element={<Authen2FA />} />
         <Route path={RoutePath.LoginPage} element={<Registration />} />
         <Route path={RoutePath.HoTroPage} element={<Support />} />
         <Route path={RoutePath.SharePostList} element={<PostList />} />
