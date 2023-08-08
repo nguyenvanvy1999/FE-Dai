@@ -9,6 +9,9 @@ import AddPost from './pages/Post/AddPost'
 import MyPost from './pages/Post/MyPost'
 import Stall from './pages/Stall/Stall'
 import Chatbox from './pages/Chatbox'
+import UserInformation from './pages/Users/UserInformation'
+import OderItem from './pages/Users/OrderItem'
+import Payment from './pages/Users/Payment'
 import EmailPage from './pages/Product/EmailPage'
 import AccountPage from './pages/Product/AccountPage'
 import SoftwarePage from './pages/Product/SoftwarePage'
@@ -41,7 +44,13 @@ function App() {
           <Route path={RoutePath.IncrementInteractPage} element={<IncrementInteract />} />
           <Route path={RoutePath.ServiceOtherPage} element={<ServiceOther />} />
           <Route path={RoutePath.ServiceSoftwarePage} element={<ServiceSoftware />} />
-          <Route path={RoutePath.WishListPage} element={<WishList />} />
+          <Route path={RoutePath.LikeProductPage} element={<WishList />} />
+        </Route>
+        {/* User information region */}
+        <Route>
+          <Route path={RoutePath.UserInformationPage} element={<UserInformation />} />
+          <Route path={RoutePath.OrderItemPage} element={<OderItem />} />
+          <Route path={RoutePath.PaymentsPage} element={<Payment />} />
         </Route>
       </Routes>
     </>
