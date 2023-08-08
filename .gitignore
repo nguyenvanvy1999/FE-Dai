@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Exclude package.json and yarn.lock
+package.json
+yarn.lock

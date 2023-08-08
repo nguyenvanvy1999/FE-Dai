@@ -1,6 +1,6 @@
 
 import Description from './Description/Description'; 
-import Shortcuts from './Shortcuts/Shortcuts';
+import Shortcuts from '../../components/Slider/Slider';
 import { MainLayout } from '../../components/Layout'
 import CategoryList from '../../containers/home/CategoryList'
 import Search from '../../containers/home/Search'
@@ -58,7 +58,7 @@ function HomePage() {
       <div className="h-108">
         <CategoryList heading="-- DANH SÁCH SẢN PHẨM --" items={categoryProducts} />
         <CategoryList heading="-- DANH SÁCH DỊCH VỤ  --" items={categoryServices} />   
-        <Shortcuts />
+        <Shortcuts heading='Lôi tắt'/>
         <Description />
       </div>
     </MainLayout>
