@@ -28,10 +28,19 @@ export const RoutePath = Object.freeze({
   EmailPage: '/danh-muc/email',
   AccountPage: '/danh-muc/tai-khoan',
   SoftwarePage: '/danh-muc/phan-mem',
+
+  // User Information
+  UserInformationPage: '/thong-tin',
+  OrderItemPage: '/orders-buy',
+  WishListPage: '/wish-list',
+  PaymentsPage: '/payments',
+  Reseller: '/reseller',
+  ChangePassword: '/change-password',
+
   ProductOtherPage: '/danh-muc/danh-muc-khac',
   IncrementInteractPage: '/danh-muc/dich-vu-tuong-tac',
   BlockchainPage: '/danh-muc/dich-vu-blockchain',
   ServiceSoftwarePage: '/danh-muc/dich-vu-phan-mem',
   ServiceOtherPage: '/danh-muc/dich-vu-khac',
-  WishListPage: 'gian-hang-yeu-thich',
+  LikeProductPage: 'gian-hang-yeu-thich',
 })
