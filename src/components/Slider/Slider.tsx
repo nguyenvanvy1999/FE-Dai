@@ -1,14 +1,18 @@
-import { useRef } from 'react'
-import ShortcutItem from './ShortcutItem'
-import Slider from 'react-slick'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
-import './slick-carousel-custom.css'
+import React, { useRef } from 'react';
+import ShortcutItem from './SliderItem';
+import Slider, { Settings } from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import './slick-carousel-custom.css';
 
-function Shortcuts() {
-  const sliderRef = useRef<Slider>(null)
+interface SlidersProps {
+  heading: string;
+}
 
-  const settings: SliderSettings = {
+const Sliders: React.FC<SlidersProps> = ({ heading }) => {
+  const sliderRef = useRef<Slider>(null);
+
+  const settings: Settings = {
     slidesToShow: 5,
     responsive: [
       {
@@ -24,24 +28,24 @@ function Shortcuts() {
         },
       },
     ],
-  }
+  };
 
   const handlePrev = () => {
     if (sliderRef.current) {
-      sliderRef.current.slickPrev()
+      sliderRef.current.slickPrev();
     }
-  }
+  };
 
   const handleNext = () => {
     if (sliderRef.current) {
-      sliderRef.current.slickNext()
+      sliderRef.current.slickNext();
     }
-  }
+  };
 
   return (
     <>
       <div className="flex items-center h-20">
-        <h3 className="text-md font-semibold">Lối tắt</h3>
+        <h3 className="text-md font-semibold">{heading}</h3>
         <div className="flex-grow mx-4 h-0.5 bg-gray-300"></div>
         <div className="w-12 h-10 ml-8 py-4 relative flex items-center justify-center">
           <button
@@ -65,17 +69,7 @@ function Shortcuts() {
         </Slider>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Shortcuts
-
-interface SliderSettings {
-  slidesToShow: number
-  responsive: {
-    breakpoint: number
-    settings: {
-      slidesToShow: number
-    }
-  }[]
-}
+export default Sliders;
