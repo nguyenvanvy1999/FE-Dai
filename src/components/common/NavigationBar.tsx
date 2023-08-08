@@ -91,8 +91,11 @@ export function NavigationBar() {
             ))}
           </ul>
         </div>
-        <div className='flex'>
-          <div className="active:bg-light p-4 h-42px relative flex items-center cursor-pointer" onClick={() => navigate("/chat-box")}>
+        <div className="flex">
+          <div
+            className="active:bg-light p-4 h-42px relative flex items-center cursor-pointer"
+            onClick={() => navigate('/chat-box')}
+          >
             <FaRegComments className="fill-white w-10 h-9 " />
             <div className="bg-white rounded-full text-black-light text-center absolute top-1 right-1 p-5px h-15px w-15px text-xs font-medium items-center justify-center hidden xl:flex">
               0
@@ -152,7 +155,7 @@ export function NavigationBar() {
                         >
                           <Link
                             to={subMenu.path}
-                            className="block hover:text-green-500 w-full px-13px py-5 "
+                            className="block hover:text-green-500 w-full px-13px py-5  pl-5"
                           >
                             {subMenu.title}
                           </Link>
