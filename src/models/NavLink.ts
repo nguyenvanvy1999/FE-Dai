@@ -13,19 +13,19 @@ export const NavLinks: NavLink[] = [
     children: [
       {
         title: 'Email',
-        path: '',
+        path: RoutePath.EmailPage,
       },
       {
         title: 'Tài khoản',
-        path: '',
+        path: RoutePath.AccountPage,
       },
       {
         title: 'Phần mềm',
-        path: '',
+        path: RoutePath.SoftwarePage,
       },
       {
         title: 'Khác',
-        path: '',
+        path: RoutePath.ProductOtherPage,
       },
     ],
   },
@@ -35,19 +35,19 @@ export const NavLinks: NavLink[] = [
     children: [
       {
         title: 'Tăng tương tác',
-        path: '',
+        path: RoutePath.IncrementInteractPage,
       },
       {
         title: 'Blockchain',
-        path: '',
+        path: RoutePath.BlockchainPage,
       },
       {
         title: 'Dịch vụ phần mềm',
-        path: '',
+        path: RoutePath.ServiceSoftwarePage,
       },
       {
         title: 'Dịch vụ khác',
-        path: '',
+        path: RoutePath.ServiceOtherPage,
       },
     ],
   },
@@ -58,7 +58,7 @@ export const NavLinks: NavLink[] = [
   },
   {
     title: 'Chia sẽ',
-    path: RoutePath.ChiaSePage,
+    path: RoutePath.SharePostList,
     children: null,
   },
   {

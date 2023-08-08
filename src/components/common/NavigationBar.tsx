@@ -1,13 +1,16 @@
 import { NavLink, NavLinks, NavLinksMobile } from '../../models'
 import Logo from '../../assets/images/logo.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { AiOutlineUser } from 'react-icons/ai'
+import { FaRegComments } from 'react-icons/fa'
 import { HiOutlineBars3BottomLeft } from 'react-icons/hi2'
 import { MdKeyboardArrowDown } from 'react-icons/md'
 import { useEffect, useState } from 'react'
+import { RoutePath } from '../../constants'
 export function NavigationBar() {
   const [openItems, setOpenItems] = useState<{ [key: string]: boolean }>({})
   const [isOpenMenuBar, setIsOpenMenuBar] = useState<boolean>(false)
+  const navigate = useNavigate();
 
   const handleShowMenu = (item: NavLink) => {
     setOpenItems((prevOpenItems) => ({
@@ -33,7 +36,7 @@ export function NavigationBar() {
 
   return (
     <>
-      <nav className="bg-green-400 px-4 py-1 flex items-center gap-4 justify-between">
+      <nav className="bg-green-400 px-4 flex items-center gap-4 justify-between">
         <div className="flex gap-4 xl:gap-8 items-center">
           <div
             className="active:bg-light p-4 h-42px relative flex items-center cursor-pointer xl:hidden"
@@ -44,20 +47,24 @@ export function NavigationBar() {
               0
             </div>
           </div>
-          <img src={Logo} alt="" className="h-11" />
+          <Link to={RoutePath.HomePage}>
+            <img src={Logo} alt="Logo" className="h-11" />
+          </Link>
           <ul className="hidden xl:block">
             {NavLinks.map((item) => (
-              <li
-                key={item.title}
-                className="inline-flex relative px-4 py-3 group hover:opacity-80"
-              >
-                <Link to={item.path} className="inline-flex items-center text-white text-sm">
+              <li key={item.title} className="inline-flex relative group px-4 py-3">
+                <Link
+                  to={item.path}
+                  className={`inline-flex items-center text-white text-sm ${
+                    item.children ? 'pointer-events-none cursor-pointer' : ''
+                  }`}
+                >
                   {item.title}
                   {item.children && <MdKeyboardArrowDown className="w-5 h-5" />}
                 </Link>
                 <ul
-                  className={`transition-opacity z-100 opacity-0 group-hover:opacity-100 bg-white shadow-xl w-300px absolute left-1.5 top-52px border ${
-                    item.children ? 'grid gap-2 grid-cols-2' : ''
+                  className={`transition-all z-100 hidden group-hover:grid bg-white w-300px absolute left-1.5 top-43px border ${
+                    item.children ? 'gap-2 grid-cols-2' : ''
                   }`}
                 >
                   {item.children &&
@@ -76,10 +83,18 @@ export function NavigationBar() {
             ))}
           </ul>
         </div>
-        <div className="active:bg-light p-4 h-42px relative flex items-center cursor-pointer">
-          <AiOutlineUser className="fill-white w-10 h-9 " />
-          <div className="bg-white rounded-full text-black-light text-center absolute top-1 right-1 p-5px h-15px w-15px text-xs font-medium items-center justify-center hidden xl:flex">
-            0
+        <div className='flex'>
+          <div className="active:bg-light p-4 h-42px relative flex items-center cursor-pointer" onClick={() => navigate("/chat-box")}>
+            <FaRegComments className="fill-white w-10 h-9 " />
+            <div className="bg-white rounded-full text-black-light text-center absolute top-1 right-1 p-5px h-15px w-15px text-xs font-medium items-center justify-center hidden xl:flex">
+              0
+            </div>
+          </div>
+          <div className="active:bg-light p-4 h-42px relative flex items-center cursor-pointer">
+            <AiOutlineUser className="fill-white w-10 h-9 " />
+            <div className="bg-white rounded-full text-black-light text-center absolute top-1 right-1 p-5px h-15px w-15px text-xs font-medium items-center justify-center hidden xl:flex">
+              0
+            </div>
           </div>
         </div>
       </nav>

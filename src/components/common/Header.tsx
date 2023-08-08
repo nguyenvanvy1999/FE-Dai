@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { AiFillFacebook, AiOutlineMail, AiOutlineClockCircle } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
 import { NavigationBar } from '.'
+import { RoutePath } from '../../constants'
 
 export const Header = (): JSX.Element => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
@@ -50,7 +51,7 @@ export const Header = (): JSX.Element => {
             </div>
             <div className="shrink" />
             <div className="flex items-center gap-1">
-              <Link to="/register" className="text-red-600 font-medium flex-none">
+              <Link to={RoutePath.LoginPage} className="text-red-600 font-medium flex-none">
                 Đăng ký bán hàng
               </Link>
               <div className="flex justify-center flex-none">
@@ -94,7 +95,7 @@ export const Header = (): JSX.Element => {
                           alt="jane avatar"
                         />
                         <div className="mx-1">
-                          <h1 className="text-sm font-semibold text-black">English</h1>
+                          <h1 className="text-sm font-semibold text-black">Việt Nam</h1>
                         </div>
                       </div>
                     </div>
