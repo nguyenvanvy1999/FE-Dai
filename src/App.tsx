@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import { RoutePath } from './constants'
-import HomePage from './pages/Home/HomePage'
+import HomePage from './pages/Home/HomePage' 
+import ProductDetail from './pages/Product/ProductDetail'
 import Registration from './pages/Registration/Registration'
 import Support from './pages/Support'
 import PostList from './pages/Post/PostList'
@@ -33,7 +34,8 @@ function App() {
           <Route path={RoutePath.EmailPage} element={<EmailPage />} />
           <Route path={RoutePath.AccountPage} element={<AccountPage />} />
           <Route path={RoutePath.SoftwarePage} element={<SoftwarePage />} />
-          <Route path={RoutePath.ProductOtherPage} element={<EmailPage />} />
+          <Route path={RoutePath.ProductOtherPage} element={<EmailPage />} /> 
+          <Route path={RoutePath.ProductDetail} element={<ProductDetail />} />
           <Route path={RoutePath.BlockchainPage} element={<BlockchainPage />} />
           <Route path={RoutePath.IncrementInteractPage} element={<IncrementInteract />} />
           <Route path={RoutePath.ServiceOtherPage} element={<ServiceOther />} />
