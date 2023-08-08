@@ -6,6 +6,7 @@ export const RoutePath = Object.freeze({
   ChiaSePage: '/chia-se',
   CongCu: '/cong-cu',
   FAQ: '/cau-hoi-thuong-gap',
+  Authen2FA: '/2FA',
   LoginPage: '/dang-nhap',
   SharePostList: '/post-list',
   MyPost: '/my-post',
