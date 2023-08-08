@@ -5,7 +5,8 @@ import ProductDetail from './pages/Product/ProductDetail'
 import Registration from './pages/Registration/Registration'
 import Support from './pages/Support' 
 import FAQ from './pages/FAQ/FAQ'  
-import Authen2FA from './pages/Authen2FA/Authen2FA' 
+import Authen2FA from './pages/Authen2FA/Authen2FA'  
+import CheckLiveFB from './pages/CheckLiveFB/CheckLiveFB' 
 import PostList from './pages/Post/PostList'
 import AddPost from './pages/Post/AddPost'
 import MyPost from './pages/Post/MyPost'
@@ -30,6 +31,7 @@ function App() {
         <Route path={RoutePath.HomePage} element={<HomePage />} /> 
         <Route path={RoutePath.FAQ} element={<FAQ />} />
         <Route path={RoutePath.Authen2FA} element={<Authen2FA />} />
+        <Route path={RoutePath.CheckLiveFB} element={<CheckLiveFB />} />
         <Route path={RoutePath.LoginPage} element={<Registration />} />
         <Route path={RoutePath.HoTroPage} element={<Support />} />
         <Route path={RoutePath.SharePostList} element={<PostList />} />
