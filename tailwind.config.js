@@ -2,7 +2,7 @@
 export default {
   content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    fontSize: {  
+    fontSize: {
       xs: ['13px', '18px'],
       sm: ['15px', '22px'],
       min: [
@@ -33,6 +33,7 @@ export default {
         '14px': '14px',
         '15px': '15px',
         '16px': '16px',
+        '18px': '18px',
       },
       lineHeight: {
         1: 1,
@@ -81,6 +82,7 @@ export default {
         '34px': '34px',
         '35px': '35px',
         '55px': '55px',
+        '190px': '190px',
         '200px': '200px',
         '255px': '255px',
         '290px': '290px',
