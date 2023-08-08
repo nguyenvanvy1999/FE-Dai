@@ -23,7 +23,7 @@ function Description() {
   }
 
   return (
-    <div className="relative">
+    <div className="relative p-20">
       <div
         className={`p-2 border border-green-400 bg-gray-100 rounded-md ${
           expanded ? 'max-h-48 overflow-hidden' : ''
@@ -50,22 +50,24 @@ function Description() {
         <FeatureList heading="Các tính năng trên trang" list={featureList} />
         <FeatureList heading="Các mặt hàng đang kinh doanh tại Tạp Hóa MMO" list={itemList} />
       </div>
-      <div className="flex justify-center w-full absolute"> 
-        {expanded ? (
-          <button
-            onClick={handleToggle}
-            className="font-bold cursor-pointer bg-green-500 p-2 text-white text-sm rounded-sm"
-          >
-            Xem thêm
-          </button>
-        ) : (
-          <button
-            onClick={handleToggle}
-            className="font-bold cursor-pointer bg-green-500 p-2 text-white text-sm rounded-sm"
-          >
-            Thu gọn
-          </button>
-        )}
+      <div className='flex justify-center'>
+        <div className="flex justify-center absolute">
+          {expanded ? (
+            <button
+              onClick={handleToggle}
+              className="font-bold cursor-pointer bg-green-500 p-2 text-white text-sm rounded-sm"
+            >
+              Xem thêm
+            </button>
+          ) : (
+            <button
+              onClick={handleToggle}
+              className="font-bold cursor-pointer bg-green-500 p-2 text-white text-sm rounded-sm"
+            >
+              Thu gọn
+            </button>
+          )}
+        </div>
       </div>
     </div>
   )
