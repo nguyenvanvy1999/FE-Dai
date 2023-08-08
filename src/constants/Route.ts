@@ -12,8 +12,9 @@ export const RoutePath = Object.freeze({
   AddPost: '/post-add',
 
   // Stall
-  stall: '/stall',
-  sales: '/stall/sales',
+  stall: '/stall', 
+  ProductDetail: '/gian-hang/gmail-ngoai-new-ios-random-ip-ngam-tren-14_728121',
+  sales: '/stall/sales', 
   orderManage: '/stall/order-manager',
   productOrders: '/stall/product-orders',
   preOrders: '/stall/pre-orders',
@@ -35,4 +36,10 @@ export const RoutePath = Object.freeze({
   PaymentsPage: '/payments',
   Reseller: '/reseller',
   ChangePassword: '/change-password',
+
+  ProductOtherPage: '/danh-muc/danh-muc-khac',
+  IncrementInteractPage: '/danh-muc/dich-vu-tuong-tac',
+  BlockchainPage: '/danh-muc/dich-vu-blockchain',
+  ServiceSoftwarePage: '/danh-muc/dich-vu-phan-mem',
+  ServiceOtherPage: '/danh-muc/dich-vu-khac',
 })

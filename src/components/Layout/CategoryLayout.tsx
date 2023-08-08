@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Footer, Header } from '../common'
 import Marquee from 'react-fast-marquee'
 import Sidebar from '../common/Sidebar'
 import { FormField, Tab } from '../../models'
 import VerticalTab from '../vertical-tab'
+import { ImEqualizer } from 'react-icons/im'
 
 export interface CategoryLayoutProps {
   children?: React.ReactNode
@@ -22,8 +23,20 @@ export function CategoryLayout({
   tabs,
   contentNotification,
 }: CategoryLayoutProps) {
+  const [activeFilter, setActiveFilter] = useState<boolean>(false)
+  useEffect(() => {
+    if (activeFilter) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto'
+    }
+  }, [activeFilter])
   return (
-    <div>
+    <div className="relative">
       <Header />
       <Marquee className="text-red-500 text-base">
         Tạp Hóa MMO - Sàn thương mại điện tử sản phẩm số phục vụ Kiếm tiền online. Mọi giao dịch
@@ -35,9 +48,23 @@ export function CategoryLayout({
         sàn.
       </Marquee>
       <div className="flex px-15px">
-        <Sidebar formFields={formFields} />
+        <Sidebar
+          formFields={formFields}
+          className={`${
+            activeFilter
+              ? 'left-0 block absolute bg-white z-40 top-0 h-100vh overflow-y-scroll'
+              : '-left-full hidden'
+          } xl:block`}
+        />
         <div className="flex-1">
           <div className="flex gap-5 items-baseline mb-2">
+            <button
+              className="h-8 text-14px font-medium border border-grey-100 px-9px flex items-center gap-1"
+              onClick={() => setActiveFilter(!activeFilter)}
+            >
+              <ImEqualizer />
+              Bộ lọc
+            </button>
             <h1 className="text-lg font-bold">{title}</h1>
             <div className="text-black-light leading-normal text-15px font-normal ">
               Tổng {total} gian hàng
@@ -47,6 +74,12 @@ export function CategoryLayout({
           {children}
         </div>
       </div>
+      {activeFilter && (
+        <div
+          className="opacity-90 absolute top-0 w-full h-full bg-grey-100 right-0 z-10"
+          onClick={() => setActiveFilter(!activeFilter)}
+        ></div>
+      )}
       <Footer />
     </div>
   )

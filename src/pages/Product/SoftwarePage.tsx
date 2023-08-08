@@ -1,19 +1,20 @@
-import { CategoryLayout } from '../components/Layout'
-import { FormSoftwareFields } from '../models'
+import { CategoryLayout } from '../../components/Layout'
+import ProductList from '../../components/ProductList'
+import { FormSoftwareFields } from '../../models'
 
 export default function SoftwarePage() {
   const tabs = [
     {
       label: 'Phổ biến',
-      content: <div>Phổ biến</div>,
+      content: <ProductList />,
     },
     {
       label: 'Giá tăng dần',
-      content: <div>Giá tăng dần</div>,
+      content: <ProductList />,
     },
     {
       label: 'Giá giảm dần',
-      content: <div>Giá giảm dần</div>,
+      content: <ProductList />,
     },
   ]
   return (
@@ -22,8 +23,6 @@ export default function SoftwarePage() {
       title="Gian hàng Phần mềm"
       total={112}
       tabs={tabs}
-    >
-      Email Page
-    </CategoryLayout>
+    />
   )
 }

@@ -2,7 +2,8 @@
 export default {
   content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    fontSize: {
+    fontSize: {  
+      xs: ['13px', '18px'],
       sm: ['15px', '22px'],
       min: [
         '10px',
@@ -26,6 +27,7 @@ export default {
     },
     extend: {
       fontSize: {
+        '10px': '10px',
         '12px': '12px',
         '13px': '13px',
         '14px': '14px',
@@ -63,6 +65,9 @@ export default {
         red: {
           500: '#ff2626',
         },
+        blue: {
+          500: '#007bff',
+        },
         'blue-light': {
           100: '#3c5a99',
         },
@@ -74,6 +79,7 @@ export default {
         '14px': '14px',
         '15px': '15px',
         '34px': '34px',
+        '35px': '35px',
         '55px': '55px',
         '200px': '200px',
         '255px': '255px',
@@ -83,13 +89,17 @@ export default {
       height: {
         '14px': '14px',
         '15px': '15px',
+        '27px': '27px',
         '34px': '34px',
         '42px': '42px',
+        '43px': '43px',
         '54px': '54px',
+        '100vh': '100vh',
       },
       spacing: {
         '3px': '3px',
         '7px': '7px',
+        '9px': '9px',
         '10px': '10px',
         '11px': '11px',
         '14px': '14px',
@@ -102,6 +112,7 @@ export default {
         '52px': '52px',
         '54px': '54px',
         '140px': '140px',
+        '300px': '300px',
         '600px': '600px',
       },
       borderRadius: {
