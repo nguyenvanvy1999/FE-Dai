@@ -29,4 +29,28 @@ export const UserData = [
     userGain: 4300,
     userLost: 234,
   },
+  {
+    id: 6,
+    year: 2021,
+    userGain: 4300,
+    userLost: 234,
+  },
+  {
+    id: 7,
+    year: 2021,
+    userGain: 4300,
+    userLost: 234,
+  },
+  {
+    id: 8,
+    year: 2023,
+    userGain: 4300,
+    userLost: 234,
+  },
+  {
+    id: 9,
+    year: 2024,
+    userGain: 43000,
+    userLost: 234,
+  },
 ]

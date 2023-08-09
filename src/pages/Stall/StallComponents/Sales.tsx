@@ -11,6 +11,7 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js'
+import { DatePicker } from 'antd'
 ChartJs.register(LineElement, PointElement, CategoryScale, LinearScale, Tooltip, Legend)
 function Sales() {
   const data = {
@@ -55,8 +56,8 @@ function Sales() {
         </div>
       </div>
 
-      <div className="flex bg-[#ffff] h-2/3 mb-4">
-        <div className="w-full">
+      <div className="flex bg-[#ffff] h-1/2 mb-4">
+        <div className="w-full h-full">
           <Line style={{ width: '100% !important' }} data={data} options={options} />
         </div>
       </div>
@@ -66,7 +67,7 @@ function Sales() {
           Kinh doanh tháng 8/2023
         </div>
         <div className="text-center">
-          <button className="bg-white text-black-light text-center">8/2023</button>
+          <DatePicker picker="month" />
         </div>
 
         <div className="flex mb-3 justify-center mt-4">
