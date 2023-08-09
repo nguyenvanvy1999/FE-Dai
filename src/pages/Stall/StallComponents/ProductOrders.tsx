@@ -84,9 +84,9 @@ function ProductOrders() {
     },
   ]
   return (
-    <div className="m-4 w-full bg-slate-50">
-      <div className=" mb-3 mt-3 items-center justify-between">
-        <p className="text-md	font-bold	mb-2 ">Đơn hàng sản phẩm</p>
+    <div className="m-4 max-w-full bg-slate-50 pl-2">
+      <div className="inline-block items-center">
+        <p className="text-md	font-bold	mb-2 mt-3 w-full ">Sản phẩm đã bán</p>
 
         <div className="flex w-full">
           <Form className="flex mr-3 items-center">

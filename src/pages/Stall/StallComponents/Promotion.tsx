@@ -69,9 +69,9 @@ function Promotion() {
     },
   ]
   return (
-    <div className="m-4 bg-[#ffff] pt-1">
-      <div className="flex mb-3 mt-3 items-center justify-between">
-        <p className="text-3xl">Mã giảm giá</p>
+    <div className="m-4 max-w-full bg-[#ffff] pl-2">
+      <div className="flex items-center justify-between">
+        <p className="text-md	font-bold	mb-2 mt-3">Mã giảm giá</p>
         <Button type="primary" className="bg-blue-700 mr-3 rounded-xl">
           Thêm mới
         </Button>

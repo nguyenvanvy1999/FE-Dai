@@ -7,9 +7,9 @@ import {
   FaComment,
   FaDollarSign,
   FaArrowUp,
+  FaListOl,
 } from 'react-icons/fa'
 import Sales from '../pages/Stall/StallComponents/Sales'
-import OrderManage from '../pages/Stall/StallComponents/StallManage'
 import ProductOrders from '../pages/Stall/StallComponents/ProductOrders'
 import PreOrders from '../pages/Stall/StallComponents/PreOrders'
 import Complain from '../pages/Stall/StallComponents/Complain'
@@ -17,27 +17,37 @@ import ResellerManage from '../pages/Stall/StallComponents/ResellerManage'
 import ReplyComment from '../pages/Stall/StallComponents/ReplyComment'
 import Promotion from '../pages/Stall/StallComponents/Promotion'
 import TopKiosk from '../pages/Stall/StallComponents/TopKiosk'
+import { FiShoppingBag } from 'react-icons/fi'
+import StallManage from '../pages/Stall/StallComponents/StallManage'
+import OrdersService from '../pages/Stall/StallComponents/OrdersService'
 export const DASHBOARD_SIDEBAR_STALL = [
   {
     key: 'sales',
     label: 'Sales',
     path: '/stall/sales',
-    icon: <FaClipboardList />,
+    icon: <FiShoppingBag />,
     component: <Sales />,
   },
   {
-    key: 'orderManage',
+    key: 'stallManage',
     label: 'Quản lý gian hàng',
     path: '/stall/order-manager',
-    icon: <FaFileInvoiceDollar />,
-    component: <OrderManage />,
+    icon: <FaClipboardList />,
+    component: <StallManage />,
   },
   {
     key: 'productOrders',
     label: 'Đơn hàng sản phẩm',
     path: '/stall/product-orders',
-    icon: <FaClipboardList />,
+    icon: <FaFileInvoiceDollar />,
     component: <ProductOrders />,
+  },
+  {
+    key: 'ordersService',
+    label: 'Đơn hàng dịch vụ',
+    path: '/stall/orders-service',
+    icon: <FaListOl />,
+    component: <OrdersService />,
   },
   {
     key: 'preOders',

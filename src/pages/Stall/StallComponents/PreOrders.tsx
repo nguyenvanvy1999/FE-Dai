@@ -94,8 +94,8 @@ function PreOrders() {
     },
   ]
   return (
-    <div className="m-4 max-w-full bg-slate-50">
-      <p className="text-md	font-bold	mb-2">Đơn hàng đặt trước</p>
+    <div className="m-4 max-w-full bg-slate-50 inline-block pl-2">
+      <p className="text-md	font-bold	mb-2 mt-3">Đơn hàng đặt trước</p>
       <div className="mb-3 mt-3 ">
         <div className="flex w-1/3 items-center">
           <Input className="w-1/2 h-10 mr-5" placeholder="Nhập mã đơn hàng" />
