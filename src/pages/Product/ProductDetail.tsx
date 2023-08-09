@@ -5,12 +5,23 @@ import 'slick-carousel/slick/slick-theme.css'
 import { useState } from 'react'
 import Shortcuts from '../../components/Slider/Slider'
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai'
+import { Button, Modal, Input } from 'antd'
+import TextArea from 'antd/es/input/TextArea'
 
 type Tab = 'mota' | 'reviews' | 'api'
 
 function ProductDetail() {
   const [quantity, setQuantity] = useState(1)
   const [activeTab, setActiveTab] = useState<Tab>('mota')
+  const [showModal, setShowModal] = useState(false)
+
+  const openModal = () => {
+    setShowModal(true)
+  }
+
+  const closeModal = () => {
+    setShowModal(false)
+  }
 
   const handleTabClick = (tab: Tab) => {
     setActiveTab(tab)
@@ -32,6 +43,39 @@ function ProductDetail() {
   }
   return (
     <MainLayout>
+      <Modal
+        visible={showModal}
+        onCancel={closeModal} 
+        footer={[
+          <Button key="cancel" className='bg-gray-200 rounded-sm text-black-100 font-semibold' onClick={closeModal}>
+            Hủy
+          </Button>,
+          <Button key="cancel" className="bg-green-600 rounded-sm text-white font-semibold" onClick={closeModal}>
+            Gửi
+          </Button>,
+        ]} 
+      >
+        <div className="mt-10 mb-5"> 
+          <div className="title absolute top-0 left-0 right-0 h-12 border-b border-gray-200 flex items-center">
+            <h3 className='px-6 py-3 font-bold text-md'>Reseller</h3>
+          </div>
+          <p className="text-green-600 text-sm">
+            Trở thành reseller của gian hàng này, bạn sẽ được hưởng % doanh thu từ chiết khấu trên
+            mỗi đơn hàng bạn bán được.
+          </p>
+          <p className="text-red-500 text-sm">
+            Lưu ý: Khách chỉ cần vào 1 lần bằng link ref, thì sẽ áp dụng với mọi đơn hàng về sau.
+          </p>
+        </div>
+        <div className="mb-4">
+          <label htmlFor="">Chiết khấu mong muốn(%)</label>
+          <Input />
+        </div>
+        <div>
+          <label htmlFor="">Lời chào hợp tác</label>
+          <TextArea />
+        </div>
+      </Modal>
       <div className="grid grid-cols-2 gap-10">
         <div className="col-span-1 relative">
           <img
@@ -237,6 +281,7 @@ function ProductDetail() {
               type="button"
               className="p-2 bg-gray-200 rounded-sm hover:bg-gray-700 "
               title="Đăng ký reseller"
+              onClick={openModal}
             >
               <img className="w-8" src="https://taphoammo.net/images/main/resell.png" />
             </button>
