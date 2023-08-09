@@ -10,7 +10,8 @@ import CheckLiveFB from './pages/CheckLiveFB/CheckLiveFB'
 import PostList from './pages/Post/PostList'
 import AddPost from './pages/Post/AddPost'
 import MyPost from './pages/Post/MyPost'
-import Stall from './pages/Stall/Stall'
+import Stall from './pages/Stall/Stall' 
+import Reseller from './pages/Reseller/Reseller'
 import Chatbox from './pages/Chatbox'
 import UserInformation from './pages/Users/UserInformation'
 import OderItem from './pages/Users/OrderItem'
@@ -31,6 +32,7 @@ function App() {
         <Route path={RoutePath.HomePage} element={<HomePage />} /> 
         <Route path={RoutePath.FAQ} element={<FAQ />} />
         <Route path={RoutePath.Authen2FA} element={<Authen2FA />} />
+        <Route path={RoutePath.Reseller} element={<Reseller />} />
         <Route path={RoutePath.CheckLiveFB} element={<CheckLiveFB />} />
         <Route path={RoutePath.LoginPage} element={<Registration />} />
         <Route path={RoutePath.HoTroPage} element={<Support />} />
