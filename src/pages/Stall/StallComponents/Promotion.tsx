@@ -1,4 +1,6 @@
 import { Button, Table } from 'antd'
+import ModalAddPromotion from '../Modal/ModalAddPromotion'
+import { useState } from 'react'
 
 function Promotion() {
   const dataSource = [
@@ -68,15 +70,24 @@ function Promotion() {
       key: 'address',
     },
   ]
+  const [isOpenModalAddPromotion, setIsOpenModalAddPromotion] = useState(false)
   return (
-    <div className="m-4 bg-[#ffff] pt-1">
-      <div className="flex mb-3 mt-3 items-center justify-between">
-        <p className="text-3xl">Mã giảm giá</p>
-        <Button type="primary" className="bg-blue-700 mr-3 rounded-xl">
+    <div className="m-4 max-w-full bg-[#ffff] pl-2">
+      <div className="flex items-center justify-between">
+        <p className="text-md	font-bold	mb-2 mt-3">Mã giảm giá</p>
+        <Button
+          onClick={() => setIsOpenModalAddPromotion(true)}
+          type="primary"
+          className="bg-blue-700 mr-3 rounded-xl"
+        >
           Thêm mới
         </Button>
       </div>
       <Table dataSource={dataSource} columns={columns} />
+      <ModalAddPromotion
+        isOpenModalAddPromotion={isOpenModalAddPromotion}
+        setIsOpenModalAddPromotion={setIsOpenModalAddPromotion}
+      />
     </div>
   )
 }

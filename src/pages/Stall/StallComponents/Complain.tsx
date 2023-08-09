@@ -69,13 +69,11 @@ function Complain() {
     },
   ]
   return (
-    <div className="m-4 max-w-full bg-slate-50">
-      <div className="flex mb-3 mt-3 items-center justify-between">
-        <div className="">
-          <p>Đơn hàng khiếu nại</p>
-        </div>
+    <div className="m-4 max-w-full bg-slate-50 pl-2">
+      <div className="inline-block items-center">
+        <p className="text-md	font-bold	mb-2 mt-3 w-full">Đơn hàng khiếu nại</p>
       </div>
-      <p>Xin lưu ý:</p>
+      <p className="text-red-500">Xin lưu ý:</p>
       <span className="text-green-300">
         -Đơn khiếu nại sẽ có 2 trạng thái. 1.Khiếu nại: Khách hàng khiếu nại về đơn hàng của bạn.
         2.Tranh chấp: Bạn không đồng ý với khiếu nại trên và chủ động chuyển sang trạng thái 2 bên
