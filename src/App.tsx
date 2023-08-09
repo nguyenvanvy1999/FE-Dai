@@ -3,14 +3,14 @@ import { RoutePath } from './constants'
 import HomePage from './pages/Home/HomePage'
 import ProductDetail from './pages/Product/ProductDetail'
 import Registration from './pages/Registration/Registration'
-import Support from './pages/Support' 
-import FAQ from './pages/FAQ/FAQ'  
-import Authen2FA from './pages/Authen2FA/Authen2FA'  
-import CheckLiveFB from './pages/CheckLiveFB/CheckLiveFB' 
+import Support from './pages/Support'
+import FAQ from './pages/FAQ/FAQ'
+import Authen2FA from './pages/Authen2FA/Authen2FA'
+import CheckLiveFB from './pages/CheckLiveFB/CheckLiveFB'
 import PostList from './pages/Post/PostList'
 import AddPost from './pages/Post/AddPost'
 import MyPost from './pages/Post/MyPost'
-import Stall from './pages/Stall/Stall' 
+import Stall from './pages/Stall/Stall'
 import Reseller from './pages/Reseller/Reseller'
 import Chatbox from './pages/Chatbox'
 import UserInformation from './pages/Users/UserInformation'
@@ -24,12 +24,13 @@ import IncrementInteract from './pages/Service/IncrementInteract'
 import ServiceOther from './pages/Service/ServiceOther'
 import ServiceSoftware from './pages/Service/ServiceSoftware'
 import WishList from './pages/WishList/WishListPage'
+import { Counter } from './pages/Counter/Counter'
 
 function App() {
   return (
     <>
       <Routes>
-        <Route path={RoutePath.HomePage} element={<HomePage />} /> 
+        <Route path={RoutePath.HomePage} element={<HomePage />} />
         <Route path={RoutePath.FAQ} element={<FAQ />} />
         <Route path={RoutePath.Authen2FA} element={<Authen2FA />} />
         <Route path={RoutePath.Reseller} element={<Reseller />} />
@@ -53,6 +54,7 @@ function App() {
           <Route path={RoutePath.ServiceOtherPage} element={<ServiceOther />} />
           <Route path={RoutePath.ServiceSoftwarePage} element={<ServiceSoftware />} />
           <Route path={RoutePath.LikeProductPage} element={<WishList />} />
+          <Route path="/counter" element={<Counter />} />
         </Route>
         {/* User information region */}
         <Route>
