@@ -1,5 +1,4 @@
 import { Button, Form, Input, Select, Table } from 'antd'
-import React from 'react'
 const dataSource = [
   {
     key: '1',
