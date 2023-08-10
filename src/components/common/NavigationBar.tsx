@@ -9,12 +9,14 @@ import { useEffect, useRef, useState } from 'react'
 import { RoutePath } from '../../constants'
 import SignInDropDown from '../../pages/Registration/SigninDropdown'
 import useOutsideClick from '../../hooks/useOutSideClick'
+import useAuth from '../../hooks/useAuth'
 export function NavigationBar() {
-  const ref = useRef(null);
+  const ref = useRef(null)
   const [openItems, setOpenItems] = useState<{ [key: string]: boolean }>({})
   const [isOpenMenuBar, setIsOpenMenuBar] = useState<boolean>(false)
   const [isOpenLoginDropDown, setIsOpenLoginDropDown] = useState<boolean>(false)
-  const navigate = useNavigate();
+  const navigate = useNavigate()
+  const { isLogging } = useAuth()
 
   const handleShowMenu = (item: NavLink) => {
     setOpenItems((prevOpenItems) => ({
@@ -101,18 +103,24 @@ export function NavigationBar() {
               0
             </div>
           </div>
-          <div className="active:bg-light p-4 h-42px relative flex items-center cursor-pointer hover:bg-white hover:bg-opacity-25" ref={ref} onClick={() => { setIsOpenLoginDropDown(true) }}>
+          <div
+            className="active:bg-light p-4 h-42px relative flex items-center cursor-pointer hover:bg-white hover:bg-opacity-25"
+            ref={ref}
+            onClick={() => {
+              setIsOpenLoginDropDown(true)
+            }}
+          >
             <AiOutlineUser className="fill-white w-10 h-9 " />
             <div className="bg-white rounded-full text-black-light text-center absolute top-1 right-1 p-5px h-15px w-15px text-xs font-medium items-center justify-center hidden xl:flex">
               0
             </div>
-            {isOpenLoginDropDown &&
+            {isOpenLoginDropDown && (
               <div
                 className={`transition-all z-100 bg-white w-300px absolute right-0 top-43px border`}
               >
-                <SignInDropDown />
+                {isLogging ? <div>Đã đăng nhâp </div> : <SignInDropDown />}
               </div>
-            }
+            )}
           </div>
         </div>
       </nav>
