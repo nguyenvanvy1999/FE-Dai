@@ -2,7 +2,7 @@ import axios from 'axios'
 import authStorage from '../utils/authStorage'
 
 const axiosOptions = {
-  baseURL: process.env.BASE_URL,
+  baseURL: 'http://localhost:3333/api',
   headers: {
     'Content-Type': 'application/json',
   },
@@ -27,3 +27,5 @@ axiosClient.interceptors.response.use(
   (response) => response.data,
   (error) => Promise.reject(error.response?.data || error)
 )
+
+export default axiosClient
