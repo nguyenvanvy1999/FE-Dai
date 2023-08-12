@@ -4,7 +4,7 @@ import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 
 import Button from '../../components/Button'
 import InputV1 from '../../components/Input/InputV1'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { RoutePath } from '../../constants'
 import useAuth from '../../hooks/useAuth'
 
@@ -16,7 +16,11 @@ const schema = yup.object({
 
 type IFormSignIn = yup.InferType<typeof schema>
 
-function SignInDropDown() {
+interface SignInDropDownProps {
+  onSetLoginDropdown: (isLogin: boolean) => void
+}
+
+function SignInDropDown({ onSetLoginDropdown }: SignInDropDownProps) {
   const navigate = useNavigate()
   const {
     handleSubmit,
@@ -34,6 +38,9 @@ function SignInDropDown() {
 
   const onSubmit: SubmitHandler<IFormSignIn> = (data) => {
     handleLogin(data)
+    if (onSetLoginDropdown) {
+      onSetLoginDropdown(false)
+    }
   }
 
   return (
@@ -59,7 +66,9 @@ function SignInDropDown() {
               onChange={field.onChange}
               postNode={
                 <div className="mt-1">
-                  <p className="text-green-600 cursor-pointer">Quên mật khẩu</p>
+                  <Link to={RoutePath.Forgotpassword} className="text-green-600 cursor-pointer">
+                    Quên mật khẩu
+                  </Link>
                 </div>
               }
             />
