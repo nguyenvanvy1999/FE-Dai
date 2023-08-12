@@ -14,6 +14,7 @@ axiosClient.interceptors.request.use(
   (request) => {
     if (!request.headers.Authorization) {
       const token = authStorage.getToken()
+      console.log(token)
       if (token) {
         request.headers.Authorization = `Bearer ${token}`
       }

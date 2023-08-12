@@ -26,6 +26,9 @@ export default {
       },
     },
     extend: {
+      gap: {
+        '14px': '14px',
+      },
       fontSize: {
         '10px': '10px',
         '12px': '12px',
@@ -79,12 +82,14 @@ export default {
         '12px': '12px',
         '14px': '14px',
         '15px': '15px',
+        '30px': '30px',
         '34px': '34px',
         '35px': '35px',
         '55px': '55px',
         '190px': '190px',
         '200px': '200px',
         '255px': '255px',
+        '280px': '280px',
         '290px': '290px',
         '300px': '300px',
       },
@@ -92,6 +97,7 @@ export default {
         '14px': '14px',
         '15px': '15px',
         '27px': '27px',
+        '30px': '30px',
         '34px': '34px',
         '42px': '42px',
         '43px': '43px',
@@ -100,6 +106,7 @@ export default {
       },
       spacing: {
         '3px': '3px',
+        '5px': '5px',
         '7px': '7px',
         '9px': '9px',
         '10px': '10px',

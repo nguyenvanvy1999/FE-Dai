@@ -189,3 +189,39 @@ export const NavLinksMobile: NavLink[] = [
     ],
   },
 ]
+
+export interface NavLinkLogged {
+  title: string
+  path: string
+}
+
+export const menuNavLinks: NavLinkLogged[] = [
+  {
+    title: 'Thông tin tài khoản',
+    path: RoutePath.AccountPage,
+  },
+  {
+    title: 'Đơn hàng đã mua',
+    path: RoutePath.OrderItemPage,
+  },
+  {
+    title: 'Gian hàng yêu thích',
+    path: RoutePath.LikeProductPage,
+  },
+  {
+    title: 'Lịch sử thanh toán',
+    path: RoutePath.LikeProductPage,
+  },
+  {
+    title: 'Reseller',
+    path: RoutePath.Reseller,
+  },
+  {
+    title: 'Quản lý nội dung',
+    path: '',
+  },
+  {
+    title: 'Đổi mật khẩu',
+    path: RoutePath.ChangePassword,
+  },
+]
