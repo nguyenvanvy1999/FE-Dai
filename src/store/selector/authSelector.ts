@@ -9,10 +9,16 @@ const selectIsLogging = createSelector(selectAuth, (auth) => auth.isLogging)
 
 const selectIsLoading = createSelector(selectAuth, (auth) => auth.isLoading)
 
+const selectIsLoadingRegister = createSelector(selectAuth, (auth) => auth.isLoadingRegister)
+
+const selectIsLoadingLogout = createSelector(selectAuth, (auth) => auth.isLoadingLogout)
+
 const authSelector = {
   selectAuthUser,
   selectIsLogging,
   selectIsLoading,
+  selectIsLoadingRegister,
+  selectIsLoadingLogout,
 }
 
 export default authSelector

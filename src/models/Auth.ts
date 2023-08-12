@@ -3,20 +3,24 @@ export interface AuthState {
   isLoading: boolean
   email: string
   isLogging: boolean
+  isLoadingRegister: boolean
+  isLoadingLogout: boolean
 }
 
 export interface RegisterPayload {
-  fullName: string
-  phoneNumber: string
-  role: number
   userName: string
-  password: string
   email: string
+  password: string
+  confirmPassword: string
 }
 
 export interface LoginPayload {
   password: string
   email: string
+}
+
+export interface LogoutPayload {
+  refreshToken: string
 }
 
 export interface LoginResponse {
