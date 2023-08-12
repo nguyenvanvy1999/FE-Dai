@@ -86,7 +86,6 @@ const authSlice = createSlice({
       state.user = null
       state.isLoadingLogout = false
       state.isLogging = false
-
       authStorage.destroyToken()
     })
     builder.addCase(logout.rejected, (state) => {
