@@ -9,6 +9,10 @@ export const store = configureStore({
     counter: counterReducer,
     auth: authReducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 })
 
 export const persitor = persistStore(store)

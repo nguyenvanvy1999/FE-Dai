@@ -50,6 +50,7 @@ const useAuth = () => {
       const actionResult = await dispatch(authAsyncAction.logout(data))
       const { message } = await unwrapResult(actionResult)
       showNotification(NotificationType.Success, message)
+      navigate(RoutePath.HomePage)
     } catch (error: any) {
       showNotification(NotificationType.Error, error.response?.data?.message || 'Đã xảy ra lỗi.')
     }

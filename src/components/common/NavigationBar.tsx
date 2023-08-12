@@ -19,7 +19,7 @@ export function NavigationBar() {
   const [isOpenMenuBar, setIsOpenMenuBar] = useState<boolean>(false)
   const [isOpenLoginDropDown, setIsOpenLoginDropDown] = useState<boolean>(false)
   const navigate = useNavigate()
-  const { isLogging, user, handleLogout } = useAuth()
+  const { user, handleLogout } = useAuth()
 
   const handleShowMenu = (item: NavLink) => {
     setOpenItems((prevOpenItems) => ({
@@ -125,7 +125,7 @@ export function NavigationBar() {
               <div
                 className={`transition-all z-100 bg-white w-300px absolute right-0 top-43px border`}
               >
-                {isLogging ? (
+                {user ? (
                   <>
                     <div className="flex px-5 py-14px border-b border-white-light hover:bg-white-light">
                       <img
