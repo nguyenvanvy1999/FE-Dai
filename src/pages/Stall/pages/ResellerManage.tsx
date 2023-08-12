@@ -1,4 +1,5 @@
 import { Select, Table } from 'antd'
+import { StallLayout } from '../../../components/Layout'
 
 function ResellerManage() {
   const dataSource = [
@@ -54,17 +55,19 @@ function ResellerManage() {
     },
   ]
   return (
-    <div className="m-4 max-w-full bg-slate-50 pl-2">
-      <div className="inline-block items-center">
-        <p className="text-md	font-bold	mb-2 mt-3 w-full ">Đơn hàng khiếu nại</p>
+    <StallLayout>
+      <div className="m-4 max-w-full bg-slate-50 pl-2">
+        <div className="inline-block items-center">
+          <p className="text-md	font-bold	mb-2 mt-3 w-full ">Đơn hàng khiếu nại</p>
 
-        <div className="">
-          <Select />
+          <div className="">
+            <Select />
+          </div>
         </div>
-      </div>
 
-      <Table indentSize={15} className="max-w-full" dataSource={dataSource} columns={columns} />
-    </div>
+        <Table indentSize={15} className="max-w-full" dataSource={dataSource} columns={columns} />
+      </div>
+    </StallLayout>
   )
 }
 

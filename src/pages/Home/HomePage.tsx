@@ -1,9 +1,9 @@
-
-import Description from './Description/Description'; 
-import Shortcuts from '../../components/Slider/Slider';
+import Description from './Description/Description'
+import Shortcuts from '../../components/Slider/Slider'
 import { MainLayout } from '../../components/Layout'
 import CategoryList from '../../containers/home/CategoryList'
 import Search from '../../containers/home/Search'
+import useAuth from '../../hooks/useAuth'
 
 function HomePage() {
   const categoryProducts = [
@@ -52,13 +52,17 @@ function HomePage() {
     },
   ]
 
+  const { user } = useAuth()
+
+  console.log(user)
+
   return (
     <MainLayout>
       <Search />
       <div className="h-108">
         <CategoryList heading="-- DANH SÁCH SẢN PHẨM --" items={categoryProducts} />
-        <CategoryList heading="-- DANH SÁCH DỊCH VỤ  --" items={categoryServices} />   
-        <Shortcuts heading='Lôi tắt'/>
+        <CategoryList heading="-- DANH SÁCH DỊCH VỤ  --" items={categoryServices} />
+        <Shortcuts heading="Lôi tắt" />
         <Description />
       </div>
     </MainLayout>

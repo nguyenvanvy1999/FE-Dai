@@ -12,6 +12,7 @@ import useOutsideClick from '../../hooks/useOutSideClick'
 import useAuth from '../../hooks/useAuth'
 
 import { Typography } from 'antd'
+import authStorage from '../../utils/authStorage'
 
 export function NavigationBar() {
   const ref = useRef(null)
@@ -48,7 +49,8 @@ export function NavigationBar() {
   })
 
   const handleUserLogout = () => {
-    handleLogout({ refreshToken: user.refreshToken })
+    handleLogout({ refreshToken: authStorage.getRefreshToken() })
+    setIsOpenLoginDropDown(false)
   }
 
   return (
@@ -134,10 +136,10 @@ export function NavigationBar() {
                         className="h-30px w-30px rounded-full mr-14px"
                       />
                       <div className="flex flex-col">
-                        <div className="text-black-light text-15px font-medium leading-5">Tên</div>
-                        <div className="text-14px leading-18px text-grey-500">
-                          danhntc.fe@gmail.com
+                        <div className="text-black-light text-15px font-medium leading-5">
+                          {user.fullName || 'Người  dùng'}
                         </div>
+                        <div className="text-14px leading-18px text-grey-500">{user.email}</div>
                       </div>
                     </div>
                     <div className="overflow-y-auto rounded bg-white">
@@ -163,7 +165,7 @@ export function NavigationBar() {
                     </div>
                   </>
                 ) : (
-                  <SignInDropDown />
+                  <SignInDropDown onSetLoginDropdown={setIsOpenLoginDropDown} />
                 )}
               </div>
             )}

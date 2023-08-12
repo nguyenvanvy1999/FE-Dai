@@ -5,6 +5,8 @@ import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import Button from '../../components/Button'
 import InputV1 from '../../components/Input/InputV1'
 import useAuth from '../../hooks/useAuth'
+import { Link } from 'react-router-dom'
+import { RoutePath } from '../../constants'
 
 const schema = yup.object({
   email: yup.string().required(),
@@ -57,7 +59,9 @@ function SignIn() {
               onChange={field.onChange}
               postNode={
                 <div className="mt-1">
-                  <p className="text-green-600 cursor-pointer">Quên mật khẩu</p>
+                  <Link className="text-green-600 cursor-pointer" to={RoutePath.Forgotpassword}>
+                    Quên mật khẩu
+                  </Link>
                 </div>
               }
             />

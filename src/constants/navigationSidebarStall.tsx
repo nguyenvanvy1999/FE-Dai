@@ -9,86 +9,71 @@ import {
   FaArrowUp,
   FaListOl,
 } from 'react-icons/fa'
-import Sales from '../pages/Stall/StallComponents/Sales'
-import ProductOrders from '../pages/Stall/StallComponents/ProductOrders'
-import PreOrders from '../pages/Stall/StallComponents/PreOrders'
-import Complain from '../pages/Stall/StallComponents/Complain'
-import ResellerManage from '../pages/Stall/StallComponents/ResellerManage'
-import ReplyComment from '../pages/Stall/StallComponents/ReplyComment'
-import Promotion from '../pages/Stall/StallComponents/Promotion'
-import TopKiosk from '../pages/Stall/StallComponents/TopKiosk'
+
 import { FiShoppingBag } from 'react-icons/fi'
-import StallManage from '../pages/Stall/StallComponents/StallManage'
-import OrdersService from '../pages/Stall/StallComponents/OrdersService'
+import { RoutePath } from './index'
+
 export const DASHBOARD_SIDEBAR_STALL = [
   {
-    key: 'sales',
     label: 'Sales',
-    path: '/stall/sales',
+    path: RoutePath.Sales,
     icon: <FiShoppingBag />,
-    component: <Sales />,
   },
+]
+
+export const MenuAdminShop = [
   {
     key: 'stallManage',
     label: 'Quản lý gian hàng',
-    path: '/stall/order-manager',
+    path: RoutePath.OrderManage,
     icon: <FaClipboardList />,
-    component: <StallManage />,
   },
   {
     key: 'productOrders',
     label: 'Đơn hàng sản phẩm',
-    path: '/stall/product-orders',
+    path: RoutePath.ProductOrders,
     icon: <FaFileInvoiceDollar />,
-    component: <ProductOrders />,
   },
   {
     key: 'ordersService',
     label: 'Đơn hàng dịch vụ',
-    path: '/stall/orders-service',
+    path: RoutePath.ServiceOrders,
     icon: <FaListOl />,
-    component: <OrdersService />,
   },
   {
     key: 'preOders',
     label: 'Đặt trước',
-    path: '/stall/pre-orders',
+    path: RoutePath.PreOrders,
     icon: <FaClock />,
-    component: <PreOrders />,
   },
   {
     key: 'complain',
     label: 'Khiếu nại',
-    path: '/stall/complain',
+    path: RoutePath.Complain,
     icon: <FaBug />,
-    component: <Complain />,
   },
   {
     key: 'resellerManage',
     label: 'Quản lý Reseller',
-    path: '/stall/resellerManage',
+    path: RoutePath.ResellerManage,
     icon: <FaUsers />,
-    component: <ResellerManage />,
   },
   {
     key: 'replyComment',
     label: 'Đánh giá',
-    path: '/stall/reply-comment',
+    path: RoutePath.ReplyComment,
     icon: <FaComment />,
-    component: <ReplyComment />,
   },
   {
     key: 'promotion',
     label: 'Mã giảm giá',
-    path: '/stall/promotion',
+    path: RoutePath.Promotion,
     icon: <FaDollarSign />,
-    component: <Promotion />,
   },
   {
     key: 'topKiosk',
     label: 'Gian hàng top 1',
-    path: '/stall/top-kiosk',
+    path: RoutePath.TopKiosk,
     icon: <FaArrowUp />,
-    component: <TopKiosk />,
   },
 ]
