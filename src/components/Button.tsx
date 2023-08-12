@@ -7,10 +7,18 @@ export interface ButtonProps {
   children: ReactNode
   variant?: ButtonVariant
   className?: string
-  type?: "button" | "submit" | "reset"
+  type?: 'button' | 'submit' | 'reset'
+  disabled?: boolean
 }
 
-export default function Button({ onClick, children, variant, className, type = "button" }: ButtonProps) {
+export default function Button({
+  onClick,
+  children,
+  variant,
+  className,
+  type = 'button',
+  disabled,
+}: ButtonProps) {
   switch (variant) {
     case 'primary':
       className += ' bg-green-400 text-white'
@@ -29,6 +37,7 @@ export default function Button({ onClick, children, variant, className, type = "
       className={`rounded-sm text-base transition-all px-5 py-1.5 font-medium hover:opacity-80 cursor-pointer ${className}`}
       onClick={onClick}
       type={type}
+      disabled={disabled}
     >
       {children}
     </button>

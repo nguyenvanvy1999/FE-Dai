@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import authSelector from '../store/selector/authSelector'
-import { LoginPayload, NotificationType } from '../models'
+import { LoginPayload, LogoutPayload, NotificationType, RegisterPayload } from '../models'
 import { RoutePath } from '../constants'
 import { authAsyncAction } from '../store/slice/authSlice'
 import { useAppDispatch } from '../store'
@@ -13,9 +13,13 @@ const useAuth = () => {
 
   const dispatch = useAppDispatch()
 
+  const user = useSelector(authSelector.selectAuthUser)
+
   const isLoading = useSelector(authSelector.selectIsLoading)
 
   const isLogging = useSelector(authSelector.selectIsLogging)
+
+  const isLoadingRegister = useSelector(authSelector.selectIsLoadingRegister)
 
   const { showNotification } = useAntdNotification()
 
@@ -30,10 +34,35 @@ const useAuth = () => {
     }
   }
 
+  const handleRegister = async (data: RegisterPayload, from = RoutePath.HomePage) => {
+    try {
+      const actionResult = await dispatch(authAsyncAction.register(data))
+      const { message } = await unwrapResult(actionResult)
+      showNotification(NotificationType.Success, message)
+      navigate(from)
+    } catch (error: any) {
+      showNotification(NotificationType.Error, error.response?.data?.message || 'Đã xảy ra lỗi.')
+    }
+  }
+
+  const handleLogout = async (data: LogoutPayload) => {
+    try {
+      const actionResult = await dispatch(authAsyncAction.logout(data))
+      const { message } = await unwrapResult(actionResult)
+      showNotification(NotificationType.Success, message)
+    } catch (error: any) {
+      showNotification(NotificationType.Error, error.response?.data?.message || 'Đã xảy ra lỗi.')
+    }
+  }
+
   return {
+    user,
     isLoading,
     isLogging,
     handleLogin,
+    handleRegister,
+    isLoadingRegister,
+    handleLogout,
   }
 }
 
