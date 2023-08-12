@@ -1,4 +1,4 @@
-import { LogoutPayload } from './../../models/Auth'
+import { LogoutPayload, ROLE } from './../../models/Auth'
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { AuthState, LoginPayload, RegisterPayload } from '../../models'
 import userApi from '../../api/userApi'
@@ -40,12 +40,12 @@ export const logout = createAsyncThunk(
 )
 
 const initialState: AuthState = {
-  user: null,
+  user: undefined,
   isLoading: false,
   email: '',
-  isLogging: false,
   isLoadingRegister: false,
   isLoadingLogout: false,
+  isAuthenticated: false,
 }
 
 const authSlice = createSlice({
@@ -57,8 +57,12 @@ const authSlice = createSlice({
       state.isLoading = true
     })
     builder.addCase(login.fulfilled, (state, { payload }) => {
-      state.user = payload.data
-      state.isLogging = true
+      state.user = {
+        ...payload.data.user,
+        role: payload.data.user.role === 1 ? ROLE.ADMIN : ROLE.USER,
+      }
+      state.isLoading = false
+      state.isAuthenticated = true
       authStorage.saveToken(payload.data.accessToken, payload.data.refreshToken)
     })
     builder.addCase(login.rejected, (state) => {
@@ -69,9 +73,12 @@ const authSlice = createSlice({
       state.isLoadingRegister = true
     })
     builder.addCase(register.fulfilled, (state, { payload }) => {
-      state.user = payload.data
+      state.user = {
+        ...payload.data.user,
+        role: payload.data.user.role === 1 ? ROLE.ADMIN : ROLE.USER,
+      }
+      state.isAuthenticated = true
       state.isLoadingRegister = false
-      state.isLogging = true
 
       authStorage.saveToken(payload.data.accessToken, payload.data.refreshToken)
     })
@@ -83,9 +90,8 @@ const authSlice = createSlice({
       state.isLoadingLogout = true
     })
     builder.addCase(logout.fulfilled, (state) => {
-      state.user = null
-      state.isLoadingLogout = false
-      state.isLogging = false
+      state.user = undefined
+      state.isAuthenticated = false
       authStorage.destroyToken()
     })
     builder.addCase(logout.rejected, (state) => {

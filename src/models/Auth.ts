@@ -1,10 +1,10 @@
 export interface AuthState {
-  user: any
+  user?: User
   isLoading: boolean
   email: string
-  isLogging: boolean
   isLoadingRegister: boolean
   isLoadingLogout: boolean
+  isAuthenticated: boolean
 }
 
 export interface RegisterPayload {
@@ -23,13 +23,28 @@ export interface LogoutPayload {
   refreshToken: string
 }
 
-export interface LoginResponse {
+export interface AuthResponse {
   status: number
   message: string
-  data: Data
+  data: AuthResponseData
 }
 
-export interface Data {
+export interface AuthResponseData {
+  user: User
   accessToken: string
   refreshToken: string
+}
+
+export interface User {
+  id: string
+  email: string
+  role: number | ROLE
+  userName: string
+  phoneNumber: string
+  fullName: string
+}
+
+export enum ROLE {
+  ADMIN = 'Admin',
+  USER = 'User',
 }

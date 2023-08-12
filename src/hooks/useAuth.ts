@@ -17,9 +17,9 @@ const useAuth = () => {
 
   const isLoading = useSelector(authSelector.selectIsLoading)
 
-  const isLogging = useSelector(authSelector.selectIsLogging)
-
   const isLoadingRegister = useSelector(authSelector.selectIsLoadingRegister)
+
+  const isAuthenticated = useSelector(authSelector.selectIsAuthenticated)
 
   const { showNotification } = useAntdNotification()
 
@@ -59,11 +59,11 @@ const useAuth = () => {
   return {
     user,
     isLoading,
-    isLogging,
     handleLogin,
     handleRegister,
     isLoadingRegister,
     handleLogout,
+    isAuthenticated,
   }
 }
 
