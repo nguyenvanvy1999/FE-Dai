@@ -1,15 +1,10 @@
-import { IProductDetailModel, IResponsePaging } from './../models/Product'
+import { ProductQuery } from '../hooks/useProduct'
+import { IProductDetailModel } from './../models/Product'
 import axiosClient from './axiosClient'
 
-export const productList = ({
-  page = 1,
-  pageSize = 50,
-}: {
-  page: number
-  pageSize?: number
-}): Promise<IResponsePaging> => {
-  const params = new URLSearchParams({ pageIndex: `${page}`, pageSize: `${pageSize}` })
-  return axiosClient.get(`/product/getPaging?${params}`)
+export const productList = (params: ProductQuery): Promise<any> => {
+  console.log({ params })
+  return axiosClient.get(`/product/getAll`, { params })
 }
 
 export const productDetail = (productId: string): Promise<IProductDetailModel> => {

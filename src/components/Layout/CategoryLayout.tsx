@@ -12,7 +12,7 @@ export interface CategoryLayoutProps {
   formFields?: FormField[]
   title: string
   total?: number
-  tabs?: Tab[]
+  tabs: Tab[]
   contentNotification?: string
 }
 
@@ -38,13 +38,9 @@ export function CategoryLayout({
     }
   }, [activeFilter])
 
-  const { productType } = useType()
-
   useEffect(() => {
     fetchProductType()
   }, [])
-
-  console.log({ productType })
 
   return (
     <div className="relative">

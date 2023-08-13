@@ -8,6 +8,7 @@ import productApi from '../../api/productApi'
 export const getAll = createAsyncThunk(
   'product/getAll',
   async (initQuery: ProductQuery, { rejectWithValue }) => {
+    console.log({ initQuery })
     try {
       return await productApi.productList(initQuery)
     } catch (error) {
@@ -30,7 +31,7 @@ const productSlice = createSlice({
       state.isLoadingProduct = true
     })
     builder.addCase(getAll.fulfilled, (state, { payload }) => {
-      state.products = payload.data
+      state.products = payload
       state.isLoadingProduct = false
     })
     builder.addCase(getAll.rejected, (state) => {

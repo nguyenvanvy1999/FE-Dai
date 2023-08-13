@@ -1,6 +1,6 @@
 export interface QueryParam {
-  page: number
-  limit: number
+  pageIndex: number
+  pageSize: number
   search?: string
   [key: string]: any
 }

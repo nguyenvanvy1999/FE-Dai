@@ -24,7 +24,7 @@ export interface IProductListModel {
 }
 
 export interface IResponsePaging {
-  data: IProductListModel[]
+  //data: IProductListModel[]
   pageIndex: number
   pageSize: number
   totalCount: number

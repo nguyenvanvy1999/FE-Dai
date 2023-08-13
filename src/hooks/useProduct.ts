@@ -18,9 +18,9 @@ const useProduct = ({ initQuery }: UseproductProps) => {
   const isLoadingProducts = useSelector(productSelector.selectProductList)
   //const [total, setTotal] = useState(0)
 
-  const fetchProductAll = async (initQuery: ProductQuery) => {
+  const fetchProductAll = async () => {
     try {
-      await dispatch(productAsyncAction.getAll(initQuery))
+      await dispatch(productAsyncAction.getAll(query.current))
     } catch (error: any) {
       console.log(error)
     }
