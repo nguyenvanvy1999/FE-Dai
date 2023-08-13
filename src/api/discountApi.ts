@@ -1,4 +1,4 @@
-import { DiscountResponseData, DiscountResponse } from './../models/Discount'
+import { DiscountResponse } from './../models/Discount'
 import axiosClient from './axiosClient'
 
 export const getAll = (): Promise<DiscountResponse> => {

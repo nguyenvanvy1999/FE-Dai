@@ -3,7 +3,6 @@ import Shortcuts from '../../components/Slider/Slider'
 import { MainLayout } from '../../components/Layout'
 import CategoryList from '../../containers/home/CategoryList'
 import Search from '../../containers/home/Search'
-import useAuth from '../../hooks/useAuth' 
 import { useState, useEffect } from 'react'  
 import axios from 'axios'
 
@@ -68,8 +67,6 @@ function HomePage() {
       console.log(error)
     }
   }
-
-  const { user } = useAuth()
 
   console.log(data)
 

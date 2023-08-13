@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import { DiscountState, DiscountPayLoad } from '../../models'
+import { DiscountState } from '../../models'
 import discountApi from '../../api/discountApi'
-import authStorage from '../../utils/authStorage'
 import storage from 'redux-persist/lib/storage'
 import { persistReducer } from 'redux-persist'
 

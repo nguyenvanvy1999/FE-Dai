@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react'
 import { StallLayout } from '../../../components/Layout'
 import axios from 'axios' 
 import authStorage from '../../../utils/authStorage'  
-import useDiscount from '../../../hooks/useDiscount'
 
 function Promotion() {
   const columns = [
@@ -61,8 +60,7 @@ function Promotion() {
   ]
 
   const [isOpenModalAddPromotion, setIsOpenModalAddPromotion] = useState(false)
-  const [data, setData] = useState([]) 
-  const { getAll } = useDiscount()   
+  const [data, setData] = useState([])  
 
 
   useEffect(() => {
