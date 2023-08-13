@@ -1,14 +1,17 @@
 import { createSelector } from '@reduxjs/toolkit'
 import { RootState } from '../index'
 
-const selectDiscount = (state: RootState) => state.discount
+const selectDiscountState = (state: RootState) => state.discount
 
-const selectDiscountProduct = createSelector(selectDiscount, (discount) => discount.product)
+const selectDiscounts = createSelector(selectDiscountState, (discount) => discount.discounts)
 
-const selectIsLoading = createSelector(selectDiscount, (discount) => discount.isLoading)
+const selectIsLoading = createSelector(
+  selectDiscountState,
+  (discount) => discount.isLoadingDiscount
+)
 
 const discountSelector = {
-  selectDiscountProduct,
+  selectDiscounts,
   selectIsLoading,
 }
 

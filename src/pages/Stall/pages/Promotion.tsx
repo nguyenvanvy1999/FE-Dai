@@ -2,10 +2,12 @@ import { Button, Table } from 'antd'
 import ModalAddPromotion from '../Modal/ModalAddPromotion'
 import { useState, useEffect } from 'react'
 import { StallLayout } from '../../../components/Layout'
-import axios from 'axios' 
-import authStorage from '../../../utils/authStorage'  
+import axios from 'axios'
+import authStorage from '../../../utils/authStorage'
+import useDiscount from '../../../hooks/useDiscount'
 
 function Promotion() {
+  const { getAll } = useDiscount()
   const columns = [
     {
       title: 'Thao tác',
@@ -59,9 +61,12 @@ function Promotion() {
     },
   ]
 
-  const [isOpenModalAddPromotion, setIsOpenModalAddPromotion] = useState(false)
-  const [data, setData] = useState([])  
+  useEffect(() => {
+    getAll()
+  }, [])
 
+  const [isOpenModalAddPromotion, setIsOpenModalAddPromotion] = useState(false)
+  const [data, setData] = useState([])
 
   useEffect(() => {
     fetchData()
@@ -76,14 +81,12 @@ function Promotion() {
           Authorization: `Bearer ${token}`, // Gửi access token trong tiêu đề Authorization
         },
       })
-      setData(response.data.data) 
+      setData(response.data.data)
     } catch (error) {
       console.log(error)
     }
-  } 
+  }
 
-
-  
   return (
     <StallLayout>
       <div className="m-4 max-w-full bg-[#ffff] pl-2">

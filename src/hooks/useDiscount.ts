@@ -1,22 +1,20 @@
 import { useSelector } from 'react-redux'
 import discountSelector from '../store/selector/discountSelector'
-import {  NotificationType } from '../models'
+import { NotificationType } from '../models'
 import { discountAsyncAction } from '../store/slice/discountSlice'
 import { useAppDispatch } from '../store'
 import useAntdNotification from './useAntdNotification'
 
 const useDiscount = () => {
-
   const dispatch = useAppDispatch()
 
-  const product = useSelector(discountSelector.selectDiscountProduct)
+  const discounts = useSelector(discountSelector.selectDiscounts)
 
-  const isLoading = useSelector(discountSelector.selectIsLoading)
-
+  const isLoadingDiscount = useSelector(discountSelector.selectIsLoading)
 
   const { showNotification } = useAntdNotification()
 
-  const getAll = async ( ) => {
+  const getAll = async () => {
     try {
       await dispatch(discountAsyncAction.getAll())
     } catch (error: any) {
@@ -24,10 +22,9 @@ const useDiscount = () => {
     }
   }
 
-
   return {
-    product,
-    isLoading,
+    discounts,
+    isLoadingDiscount,
     getAll,
   }
 }

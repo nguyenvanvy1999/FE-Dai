@@ -1,20 +1,22 @@
 import { useDispatch } from 'react-redux'
 import { configureStore } from '@reduxjs/toolkit'
 import counterReducer from './slice/counterSlice'
-import authReducer from './slice/authSlice' 
+import authReducer from './slice/authSlice'
 import discountReducer from './slice/discountSlice'
 import { persistStore } from 'redux-persist'
 import productReducer from './slice/productSlice'
 import typeReducer from './slice/typeSlice'
+import orderReducer from './slice/orderSlice'
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
-    auth: authReducer, 
+    auth: authReducer,
     discount: discountReducer,
     // auth: authReducer,
     product: productReducer,
     type: typeReducer,
+    order: orderReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
