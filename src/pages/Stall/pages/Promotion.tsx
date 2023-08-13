@@ -1,24 +1,12 @@
 import { Button, Table } from 'antd'
 import ModalAddPromotion from '../Modal/ModalAddPromotion'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { StallLayout } from '../../../components/Layout'
+import axios from 'axios' 
+import authStorage from '../../../utils/authStorage'  
+import useDiscount from '../../../hooks/useDiscount'
 
 function Promotion() {
-  const dataSource = [
-    {
-      key: '1',
-      name: 'Mike',
-      age: 32,
-      address: '10 Downing Street',
-    },
-    {
-      key: '2',
-      name: 'John',
-      age: 42,
-      address: '10 Downing Street',
-    },
-  ]
-
   const columns = [
     {
       title: 'Thao tác',
@@ -71,7 +59,33 @@ function Promotion() {
       key: 'address',
     },
   ]
+
   const [isOpenModalAddPromotion, setIsOpenModalAddPromotion] = useState(false)
+  const [data, setData] = useState([]) 
+  const { getAll } = useDiscount()   
+
+
+  useEffect(() => {
+    fetchData()
+  }, [])
+
+  const fetchData = async () => {
+    try {
+      const token = authStorage.getToken()
+
+      const response = await axios.get('http://localhost:3333/api/discount/getAll', {
+        headers: {
+          Authorization: `Bearer ${token}`, // Gửi access token trong tiêu đề Authorization
+        },
+      })
+      setData(response.data.data) 
+    } catch (error) {
+      console.log(error)
+    }
+  } 
+
+
+  
   return (
     <StallLayout>
       <div className="m-4 max-w-full bg-[#ffff] pl-2">
@@ -85,7 +99,7 @@ function Promotion() {
             Thêm mới
           </Button>
         </div>
-        <Table dataSource={dataSource} columns={columns} />
+        <Table dataSource={data} columns={columns} />
         <ModalAddPromotion
           isOpenModalAddPromotion={isOpenModalAddPromotion}
           setIsOpenModalAddPromotion={setIsOpenModalAddPromotion}
