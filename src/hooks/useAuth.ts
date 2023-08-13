@@ -30,7 +30,7 @@ const useAuth = () => {
       showNotification(NotificationType.Success, message)
       navigate(from)
     } catch (error: any) {
-      showNotification(NotificationType.Error, error.response?.data?.message || 'Đã xảy ra lỗi.')
+      showNotification(NotificationType.Error, error.message || 'Đã xảy ra lỗi.')
     }
   }
 
@@ -41,7 +41,7 @@ const useAuth = () => {
       showNotification(NotificationType.Success, message)
       navigate(from)
     } catch (error: any) {
-      showNotification(NotificationType.Error, error.response?.data?.message || 'Đã xảy ra lỗi.')
+      showNotification(NotificationType.Error, error.message || 'Đã xảy ra lỗi.')
     }
   }
 
@@ -52,7 +52,7 @@ const useAuth = () => {
       showNotification(NotificationType.Success, message)
       navigate(RoutePath.HomePage)
     } catch (error: any) {
-      showNotification(NotificationType.Error, error.response?.data?.message || 'Đã xảy ra lỗi.')
+      showNotification(NotificationType.Error, error.message || 'Đã xảy ra lỗi.')
     }
   }
 

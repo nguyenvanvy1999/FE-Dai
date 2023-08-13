@@ -1,6 +1,6 @@
 export interface DiscountState {
-  product?: Product 
-  isLoading: boolean
+  discounts: DiscountResponseData[]
+  isLoadingDiscount: boolean
 }
 
 export interface Product {
@@ -40,4 +40,4 @@ export interface DiscountPayLoad {
   updatedAt: Date
   value: number
   _id: string
-} 
+}

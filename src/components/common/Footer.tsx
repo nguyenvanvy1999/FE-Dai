@@ -1,9 +1,13 @@
 import { createElement } from 'react'
 import { Link } from 'react-router-dom'
-import { ContactList, InformationList, SocialNetworks } from '../../models'
+import { ContactList, InformationList, NotificationType, SocialNetworks } from '../../models'
 import Button from '../Button'
+import useAuth from '../../hooks/useAuth'
+import useAntdNotification from '../../hooks/useAntdNotification'
 
 export function Footer() {
+  const { user } = useAuth()
+  const { showNotification } = useAntdNotification()
   return (
     <div className="border-t-grey-100 border-t">
       <div className="container mx-auto px-15px">
@@ -52,9 +56,21 @@ export function Footer() {
               Tạo một gian hàng của bạn trên trang của chúng tôi. Đội ngũ hỗ trợ sẽ liên lạc để giúp
               bạn tối ưu khả năng bán hàng.
             </div>
-            <Button variant="primary" className="w-28">
-              Tham gia
-            </Button>
+            {!user && (
+              <Button
+                variant="primary"
+                className="w-28"
+                onClick={() =>
+                  showNotification(
+                    NotificationType.Warning,
+                    'Vui lòng đăng nhập để thực hiện chức năng này'
+                  )
+                }
+              >
+                Tham gia
+              </Button>
+            )}
+
             <div className="mt-5 text-sm">
               Theo dõi chúng tôi trên mạng xã hội
               <div className="flex gap-2 mt-2">

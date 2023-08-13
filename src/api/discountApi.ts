@@ -1,12 +1,11 @@
-import { DiscountResponse } from './../models/Discount'
 import axiosClient from './axiosClient'
 
-export const getAll = (): Promise<DiscountResponse> => {
+export const getAll = (): Promise<any> => {
   return axiosClient.get('/discount/getAll')
 }
 
 const discountApi = {
-    getAll
+  getAll,
 }
 
 export default discountApi

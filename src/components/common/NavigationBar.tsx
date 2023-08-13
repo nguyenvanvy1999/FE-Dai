@@ -157,6 +157,17 @@ export function NavigationBar() {
                       </ul>
                     </div>
                     <div className="py-3 border-t border-white-light">
+                      <div
+                        className="py-5px px-5 hover:bg-white-light"
+                        onClick={() => navigate(RoutePath.Sales)}
+                      >
+                        <Typography.Text className=" text-15px font-medium leading-5 text-gray-900">
+                          Quản lý cửa hàng
+                        </Typography.Text>
+                      </div>
+                    </div>
+
+                    <div className="py-3 border-t border-white-light">
                       <div className="py-5px px-5 hover:bg-white-light" onClick={handleUserLogout}>
                         <Typography.Text className=" text-15px font-medium leading-5 text-gray-900">
                           Thoát
