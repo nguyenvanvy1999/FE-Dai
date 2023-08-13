@@ -3,7 +3,6 @@ import { MainLayout } from '../../components/Layout'
 import Button from '../../components/Button'
 import Image from '../../components/Image'
 import { FaRegComments } from 'react-icons/fa'
-import Pagination from '../../components/Pagintion-Main'
 import SearchBox from '../../components/Input/SearchBox'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -103,7 +102,7 @@ function PostList() {
                 </div>
               </div>
             </div>
-            <Pagination />
+            {/* <Pagination /> */}
           </div>
         </div>
       </div>
