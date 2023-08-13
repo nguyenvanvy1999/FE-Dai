@@ -1,113 +1,96 @@
 import { Button, Form, Input, Select, Table } from 'antd'
 import { StallLayout } from '../../../components/Layout'
+import useOrder from '../../../hooks/useOrder'
+import { useEffect } from 'react'
+import Column from 'antd/es/table/Column'
+import { Order } from '../../../models/Order'
+import moment from 'moment'
 
 function ProductOrders() {
-  const dataSource = [
-    {
-      key: '1',
-      name: 'Mike',
-      age: 32,
-      address: '10 Downing Street',
-    },
-    {
-      key: '2',
-      name: 'John',
-      age: 42,
-      address: '10 Downing Street',
-    },
-  ]
+  // const dataSource = [
+  //   {
+  //     key: '1',
+  //     name: 'Mike',
+  //     age: 32,
+  //     address: '10 Downing Street',
+  //   },
+  //   {
+  //     key: '2',
+  //     name: 'John',
+  //     age: 42,
+  //     address: '10 Downing Street',
+  //   },
+  // ]
 
-  const columns = [
-    {
-      title: 'Thao tác',
-      dataIndex: 'name',
-      key: 'name',
-    },
-    {
-      title: 'Mã đơn hàng',
-      dataIndex: 'age',
-      key: 'age',
-    },
-    {
-      title: 'Người mua',
-      dataIndex: 'address',
-      key: 'address',
-    },
-    {
-      title: 'Gian hàng',
-      dataIndex: 'address',
-      key: 'address',
-    },
-    {
-      title: 'Mặt hàng',
-      dataIndex: 'address',
-      key: 'address',
-    },
-    {
-      title: 'Số lượng',
-      dataIndex: 'address',
-      key: 'address',
-    },
-    {
-      title: 'Giá',
-      dataIndex: 'address',
-      key: 'address',
-    },
-    {
-      title: 'Đã giảm',
-      dataIndex: 'address',
-      key: 'address',
-    },
-    {
-      title: 'Tổng tiền',
-      dataIndex: 'address',
-      key: 'address',
-    },
-    {
-      title: 'Hoàn tiền',
-      dataIndex: 'address',
-      key: 'address',
-    },
-    {
-      title: 'Reseller',
-      dataIndex: 'address',
-      key: 'address',
-    },
-    {
-      title: 'Sàn',
-      dataIndex: 'address',
-      key: 'address',
-    },
-    {
-      title: 'Trạng thái',
-      dataIndex: 'address',
-      key: 'address',
-    },
-  ]
+  const { fetchDataOrder, orders, isLoadingOrder } = useOrder({
+    initQuery: { pageIndex: 1, pageSize: 10 },
+  })
+
+  useEffect(() => {
+    fetchDataOrder()
+  }, [])
+
+  console.log(orders)
+
   return (
     <StallLayout>
-      <div className="m-4 max-w-full bg-slate-50 pl-2">
-        <div className="inline-block items-center">
-          <p className="text-md	font-bold	mb-2 mt-3 w-full ">Sản phẩm đã bán</p>
+      <div className="m-4 max-w-full bg-slate-50 p-4 ">
+        <div className="inline-block items-center w-full">
+          <p className="text-md	font-bold	mb-2 mt-3">Sản phẩm đã bán</p>
 
-          <div className="flex w-full">
-            <Form className="flex mr-3 items-center">
-              <Form.Item className="mr-3">
-                <Input size="large" placeholder="Nhập mã đơn hàng" />
-              </Form.Item>
-              <Form.Item className="mr-3">
-                <Input size="large" placeholder="Nhập tên người mua" />
-              </Form.Item>
-              <Form.Item>
-                <Select />
-              </Form.Item>
-            </Form>
-            <Button className="bg-green-300 mr-3 hover:bg-green-200 hover:text-black text-white h-full">
+          <Form className="grid grid-cols-4 gap-2">
+            <Form.Item className="w-full">
+              <Input size="large" placeholder="Nhập mã đơn hàng" />
+            </Form.Item>
+            <Form.Item className=" w-full">
+              <Input size="large" placeholder="Nhập tên người mua" />
+            </Form.Item>
+            <Form.Item className="w-full">
+              <Select
+                size="large"
+                defaultValue="0"
+                placeholder=""
+                options={[
+                  { value: '0', label: 'Tất cả' },
+                  { value: '1', label: 'Tạm giữ tiền' },
+                  { value: '2', label: 'Hoàn thành' },
+                  { value: '3', label: 'Hủy' },
+                  { value: '4', label: 'Thất bại' },
+                ]}
+              />
+            </Form.Item>
+            <Button size="large" className="bg-green-100 text-white w-1/2" type="default">
               Tìm đơn hàng
             </Button>
-          </div>
+          </Form>
         </div>
-        <Table indentSize={15} className="max-w-full" dataSource={dataSource} columns={columns} />
+        <Table
+          indentSize={15}
+          className="max-w-full"
+          dataSource={orders}
+          pagination={false}
+          loading={isLoadingOrder}
+        >
+          <Column title="Thao tác" />
+          <Column title="Mã đơn hàng" dataIndex="uid" key="uid" />
+          <Column
+            title="Ngày bán"
+            dataIndex="createdAt"
+            key="createdAt"
+            render={(_, record: Order) => moment(record.createdAt).format('DD/MM/YYYY')}
+          />
+          <Column title="Người mua" />
+          <Column title="Gian hàng" />
+          <Column title="Mặt hàng" />
+          <Column title="Số lượng" dataIndex="quantity" key="quantity" />
+          <Column title="Giá" dataIndex="price" key="price" />
+          <Column title="Đã giảm" dataIndex="discount" key="discount" />
+          <Column title="Tổng tiền" dataIndex="totalPayment" key="totalPayment" />
+          <Column title="Hoàn tiền" />
+          <Column title="Reseller" />
+          <Column title="Sàn" />
+          <Column title="Trạng thái" />
+        </Table>
       </div>
     </StallLayout>
   )

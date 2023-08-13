@@ -1,5 +1,6 @@
 import axios from 'axios'
 import authStorage from '../utils/authStorage'
+import { RoutePath } from '../constants'
 import queryString from 'query-string'
 
 const axiosOptions = {
@@ -28,7 +29,13 @@ axiosClient.interceptors.request.use(
 
 axiosClient.interceptors.response.use(
   (response) => response.data,
-  (error) => Promise.reject(error.response?.data || error)
+  (error) => {
+    if (error.response && error.response.status === 401) {
+      authStorage.destroyToken()
+      location.href = RoutePath.HomePage
+    }
+    return Promise.reject(error.response?.data || error)
+  }
 )
 
 export default axiosClient

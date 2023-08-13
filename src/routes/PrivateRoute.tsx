@@ -20,6 +20,7 @@ const PrivateRoute = ({ children, roles }: PrivateRouteProps) => {
 
   const userHasRequiredRole = user && roles.includes(user.role as ROLE) ? true : false
 
+
   if (!isAuthenticated) {
     return <Navigate to={RoutePath.LoginPage} state={{ from: location }} />
   }
