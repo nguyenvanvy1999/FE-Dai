@@ -1,5 +1,5 @@
 import ProductList from '../../components/ProductList'
-import { FormEmailFields } from '../../models'
+
 import { CategoryLayout } from '../../components/Layout'
 
 export interface ServiceSoftwareProps {}
@@ -21,7 +21,7 @@ export default function ServiceSoftware() {
   ]
   return (
     <CategoryLayout
-      formFields={FormEmailFields}
+      //formFields={FormEmailFields}
       title="Gian hàng dịch vụ phần mềm"
       total={462}
       tabs={tabs}

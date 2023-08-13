@@ -1,5 +1,4 @@
 import ProductList from '../../components/ProductList'
-import { FormAccountFields } from '../../models'
 import { CategoryLayout } from '../../components/Layout'
 
 export interface ServiceOtherProps {}
@@ -21,7 +20,6 @@ export default function ServiceOther() {
   ]
   return (
     <CategoryLayout
-      formFields={FormAccountFields}
       title="Gian hàng dịch vụ khác"
       total={1528}
       tabs={tabs}

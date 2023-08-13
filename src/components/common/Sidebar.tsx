@@ -14,7 +14,7 @@ const schema = yup.object().shape({
 })
 
 interface SidebarProps {
-  formFields: FormField[]
+  formFields?: FormField[]
   className: string
 }
 
@@ -47,7 +47,7 @@ export default function Sidebar({ formFields, className }: SidebarProps) {
               />
             </button>
             <form onSubmit={handleSubmit(onSubmit)}>
-              {formFields.map((formItem) => {
+              {formFields?.map((formItem) => {
                 return (
                   <Controller
                     key={formItem.name}

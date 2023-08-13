@@ -1,11 +1,13 @@
 import axios from 'axios'
 import authStorage from '../utils/authStorage'
+import queryString from 'query-string'
 
 const axiosOptions = {
   baseURL: 'http://localhost:3333/api',
   headers: {
     'Content-Type': 'application/json',
   },
+  paramsSerializer: (params: any) => queryString.stringify(params),
 }
 
 const axiosClient = axios.create(axiosOptions)

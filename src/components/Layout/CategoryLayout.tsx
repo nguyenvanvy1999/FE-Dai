@@ -5,12 +5,13 @@ import Sidebar from '../common/Sidebar'
 import { FormField, Tab } from '../../models'
 import VerticalTab from '../vertical-tab'
 import { ImEqualizer } from 'react-icons/im'
+import useType from '../../hooks/useType'
 
 export interface CategoryLayoutProps {
   children?: React.ReactNode
-  formFields: FormField[]
+  formFields?: FormField[]
   title: string
-  total: number
+  total?: number
   tabs: Tab[]
   contentNotification?: string
 }
@@ -24,6 +25,7 @@ export function CategoryLayout({
   contentNotification,
 }: CategoryLayoutProps) {
   const [activeFilter, setActiveFilter] = useState<boolean>(false)
+  const { fetchProductType } = useType()
   useEffect(() => {
     if (activeFilter) {
       document.body.style.overflow = 'hidden'
@@ -35,6 +37,11 @@ export function CategoryLayout({
       document.body.style.overflow = 'auto'
     }
   }, [activeFilter])
+
+  useEffect(() => {
+    fetchProductType()
+  }, [])
+
   return (
     <div className="relative">
       <Header />

@@ -36,6 +36,7 @@ import ReplyComment from './pages/Stall/pages/ReplyComment'
 import ResellerManage from './pages/Stall/pages/ResellerManage'
 import PrivateRoute from './routes/PrivateRoute'
 import { ROLE } from './models'
+import ProductOtherPage from './pages/Product/ProductOtherPage'
 
 function App() {
   return (
@@ -147,7 +148,7 @@ function App() {
           <Route path={RoutePath.EmailPage} element={<EmailPage />} />
           <Route path={RoutePath.AccountPage} element={<AccountPage />} />
           <Route path={RoutePath.SoftwarePage} element={<SoftwarePage />} />
-          <Route path={RoutePath.ProductOtherPage} element={<EmailPage />} />
+          <Route path={RoutePath.ProductOtherPage} element={<ProductOtherPage />} />
           <Route path={RoutePath.ProductDetail} element={<ProductDetail />} />
           <Route path={RoutePath.BlockchainPage} element={<BlockchainPage />} />
           <Route path={RoutePath.IncrementInteractPage} element={<IncrementInteract />} />

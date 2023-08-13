@@ -1,6 +1,7 @@
 import { CategoryLayout } from '../../components/Layout'
 import ProductList from '../../components/ProductList'
-import { FormEmailFields } from '../../models'
+import useType from '../../hooks/useType'
+import { ProductTypeResponse } from '../../models'
 
 export default function ProductOtherPage() {
   const tabs = [
@@ -17,9 +18,20 @@ export default function ProductOtherPage() {
       content: <ProductList />,
     },
   ]
+
+  const { productType } = useType()
+
+  const productTypeProductOther = productType
+    .slice(20, 24)
+    .map((productType: ProductTypeResponse) => ({
+      name: productType.slug,
+      value: productType._id,
+      label: productType.name,
+    }))
+
   return (
     <CategoryLayout
-      formFields={FormEmailFields}
+      formFields={productTypeProductOther}
       title="Gian hàng khác"
       total={462}
       tabs={tabs}
