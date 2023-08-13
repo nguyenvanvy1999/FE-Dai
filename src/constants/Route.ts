@@ -15,7 +15,7 @@ export const RoutePath = Object.freeze({
 
   // Stall
   stall: '/stall',
-  ProductDetail: '/gian-hang/gmail-ngoai-new-ios-random-ip-ngam-tren-14_728121',
+  ProductDetail: '/gian-hang/:slug',
   sales: '/stall/sales',
   orderManage: '/stall/order-manager',
   productOrders: '/stall/product-orders',
