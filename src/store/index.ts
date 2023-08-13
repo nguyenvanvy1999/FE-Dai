@@ -12,7 +12,7 @@ export const store = configureStore({
     counter: counterReducer,
     auth: authReducer, 
     discount: discountReducer,
-    auth: authReducer,
+    // auth: authReducer,
     product: productReducer,
     type: typeReducer,
   },
