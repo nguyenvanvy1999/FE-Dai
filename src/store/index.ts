@@ -4,12 +4,17 @@ import counterReducer from './slice/counterSlice'
 import authReducer from './slice/authSlice' 
 import discountReducer from './slice/discountSlice'
 import { persistStore } from 'redux-persist'
+import productReducer from './slice/productSlice'
+import typeReducer from './slice/typeSlice'
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
     auth: authReducer, 
     discount: discountReducer,
+    auth: authReducer,
+    product: productReducer,
+    type: typeReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
