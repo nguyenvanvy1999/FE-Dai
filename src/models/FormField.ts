@@ -1,6 +1,7 @@
 export interface FormField {
   name: string
   label: string
+  value: string
 }
 
 export const FormEmailFields: FormField[] = [

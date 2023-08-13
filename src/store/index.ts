@@ -3,11 +3,15 @@ import { configureStore } from '@reduxjs/toolkit'
 import counterReducer from './slice/counterSlice'
 import authReducer from './slice/authSlice'
 import { persistStore } from 'redux-persist'
+import productReducer from './slice/productSlice'
+import typeReducer from './slice/typeSlice'
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
     auth: authReducer,
+    product: productReducer,
+    type: typeReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

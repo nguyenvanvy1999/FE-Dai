@@ -1,16 +1,12 @@
-import { IBusinessResponseType, IShopType } from '../models/Type';
+import { ProductTypeResponse } from '../models'
 import axiosClient from './axiosClient'
 
-export const businessType = () : Promise<IBusinessResponseType[]>=> {
-  return axiosClient.get(`/businesstype/getAll`);
-}
-export const shopTypeGetById = (id: string): Promise<IShopType[]> => {
-  return axiosClient.get('/shopType/getById/' + id);
+export const productType = (): Promise<ProductTypeResponse[]> => {
+  return axiosClient.get('/producttype/getAll')
 }
 
 const typeApi = {
-  businessType,
-  shopTypeGetById
+  productType,
 }
 
 export default typeApi

@@ -1,33 +1,34 @@
 import { CategoryLayout } from '../../components/Layout'
 import ProductList from '../../components/ProductList'
-import { FormSoftwareFields } from '../../models'
-import useProductList from '../../hooks/Product/useProductList'
-import { useState } from 'react';
+import useType from '../../hooks/useType'
+import { ProductTypeResponse } from '../../models'
 
 export default function SoftwarePage() {
-  const [page, setPage] = useState(1);
-  const { products } = useProductList({ page });
+  //const [page, setPage] = useState(1)
+  //const { products } = useProductList({ page })
+
+  const { productType } = useType()
+
+  const productTypeSoftware = productType.slice(8, 17).map((productType: ProductTypeResponse) => ({
+    name: productType.slug,
+    value: productType._id,
+    label: productType.name,
+  }))
 
   const tabs = [
     {
       label: 'Phổ biến',
-      content: <ProductList page={page} list={products} setPage={setPage} />,
+      content: <ProductList />,
     },
     {
       label: 'Giá tăng dần',
-      content: <ProductList page={page} list={products} setPage={setPage} />,
+      content: <ProductList />,
     },
     {
       label: 'Giá giảm dần',
-      content: <ProductList page={page} list={products} setPage={setPage} />,
+      content: <ProductList />,
     },
   ]
-  return (
-    <CategoryLayout
-      formFields={FormSoftwareFields}
-      title="Gian hàng Phần mềm"
-      total={products?.totalCount || 0}
-      tabs={tabs}
-    />
-  )
+
+  return <CategoryLayout title="Gian hàng Phần mềm" formFields={productTypeSoftware} tabs={tabs} />
 }

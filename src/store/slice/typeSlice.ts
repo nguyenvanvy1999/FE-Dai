@@ -1,29 +1,14 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
+import storage from 'redux-persist/lib/storage'
+import { persistReducer } from 'redux-persist'
+import { TypeState } from '../../models/Type'
 import typeApi from '../../api/typeApi'
-import { IBusinessResponseType, IShopType } from '../../models/Type';
 
-export interface TypeState {
-  businessType: IBusinessResponseType[];
-  shopType: IShopType[];
-}
-
-export const storeBusinessType = createAsyncThunk(
-  'business/type',
-  async (payload, { rejectWithValue }) => {
+export const getProductType = createAsyncThunk(
+  'type/getProductType',
+  async (_, { rejectWithValue }) => {
     try {
-      return await typeApi.businessType();
-    } catch (error) {
-      return rejectWithValue(error)
-    }
-  }
-)
-
-export const storeShopType = createAsyncThunk(
-  'shop/type',
-  async (payload, { rejectWithValue }) => {
-    try {
-      return await typeApi.shopTypeGetById(`${payload}`)
+      return await typeApi.productType()
     } catch (error) {
       return rejectWithValue(error)
     }
@@ -31,28 +16,40 @@ export const storeShopType = createAsyncThunk(
 )
 
 const initialState: TypeState = {
-  businessType: [],
-  shopType: [],
+  productTypes: [],
+  isLoadingProductType: false,
 }
-export const typeSlice = createSlice({
+
+const typeSlice = createSlice({
   name: 'type',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(storeBusinessType.fulfilled, (state, { payload }) => {
-      state.businessType = payload
-    });
-    builder.addCase(storeShopType.fulfilled, (state, { payload }) => {
-      state.shopType = payload
+    builder.addCase(getProductType.pending, (state) => {
+      state.isLoadingProductType = true
+    })
+    builder.addCase(getProductType.fulfilled, (state, { payload }) => {
+      state.productTypes = payload
+      state.isLoadingProductType = false
+    })
+    builder.addCase(getProductType.rejected, (state) => {
+      state.isLoadingProductType = false
     })
   },
 })
 
-export const typeAction = {
-  storeBusinessType,
-  storeShopType,
+// export const {} = authSlice.actions
+
+export const typeAsyncAction = {
+  getProductType,
 }
 
-const authReducer = persistReducer(persistConfig, authSlice.reducer)
+const persistConfig = {
+  //keyPrefix: 'taphoammo',
+  key: 'ProductType',
+  storage,
+}
 
-export default typeAction.reducer
+const typeReducer = persistReducer(persistConfig, typeSlice.reducer)
+
+export default typeReducer

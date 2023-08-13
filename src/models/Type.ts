@@ -1,18 +1,17 @@
-export interface IBusinessType {
-  "_id": string;
-  "name": string;
-  "status": number;
-  "slug": string;
+export interface ProductTypeResponse {
+  _id: string
+  name: string
+  business_typeId: string
+  shop_typeId: string
+  discount_percent: number
+  status: number
+  deleted: boolean
+  createdAt: string
+  updatedAt: string
+  slug: string
 }
 
-export interface IShopType {
-  "business_typeId": string;
-  "_id": string;
-  "name": string;
-  "status": number;
-  "slug": string;
-}
-
-export interface IBusinessResponseType extends IBusinessType {
-  shopTypes: IShopType[];
+export interface TypeState {
+  productTypes: ProductTypeResponse[]
+  isLoadingProductType: boolean
 }
