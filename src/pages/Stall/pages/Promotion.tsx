@@ -7,7 +7,7 @@ import authStorage from '../../../utils/authStorage'
 import useDiscount from '../../../hooks/useDiscount'
 
 function Promotion() {
-  const { discounts, getAll } = useDiscount()
+  const { getAll } = useDiscount()
   const columns = [
     {
       title: 'Thao tác',
