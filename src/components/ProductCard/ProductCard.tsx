@@ -4,16 +4,19 @@ import Badge from '../Badge'
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
 import { useState } from 'react'
 import Resell from '../../assets/images/resell.png'
+import { IProductListModel } from '../../models/Product'
 
 export interface ProductCardProps {
-  className?: string
+  className?: string;
+  item: IProductListModel
 }
 
-export default function ProductCard({ className }: ProductCardProps) {
+export default function ProductCard({ className, item }: ProductCardProps) {
   const [activeHeart, setActiveHeart] = useState<boolean>(false)
   const handleActiveHeart = () => {
     setActiveHeart(!activeHeart)
   }
+
   return (
     <div className={`flex gap-3 p-4 justify-between border ${className}`}>
       <div className="flex gap-3 flex-col xl:flex-row">
@@ -25,10 +28,10 @@ export default function ProductCard({ className }: ProductCardProps) {
             />
           </Link>
           <div className="text-14px text-grey-900 pt-15px text-center">
-            Tồn kho: <span className="text-green-500">14612</span>
+            Tồn kho: <span className="text-green-500">{"??"}</span>
           </div>
           <div className="mt-3 text-black-light text-center text-15px font-bold">
-            3.100đ - 7.000đ
+            {item.price}
           </div>
           <Badge className="absolute -top-14px -left-15px">Không trùng</Badge>
           <Badge className="absolute top-4 -left-15px">
@@ -45,7 +48,7 @@ export default function ProductCard({ className }: ProductCardProps) {
         <div className="flex flex-col gap-2">
           <Link to="" className="flex gap-2 text-16px font-medium hover:text-green-300">
             <Badge variant="success" className='max-sm:text-10px max-sm:whitespace-nowrap max-sm:h-27px'>Sản phẩm</Badge>
-            Gmail NEW iOS Us và Ngoại. Chỉ bán min 30 cái{' '}
+            {item.name}{' '}
           </Link>
           <div className="flex xl:flex-row flex-col">
             <div className="flex items-center ">

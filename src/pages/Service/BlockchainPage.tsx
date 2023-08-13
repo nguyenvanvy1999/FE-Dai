@@ -1,6 +1,5 @@
 import { CategoryLayout } from '../../components/Layout'
 import ProductList from '../../components/ProductList'
-import { FormEmailFields } from '../../models'
 
 export default function BlockchainPage() {
   const tabs = [
@@ -19,7 +18,7 @@ export default function BlockchainPage() {
   ]
   return (
     <CategoryLayout
-      formFields={FormEmailFields}
+      //formFields={}
       title="Gian hàng Blockchain"
       total={462}
       tabs={tabs}

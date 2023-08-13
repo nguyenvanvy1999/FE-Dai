@@ -1,6 +1,7 @@
 import { CategoryLayout } from '../../components/Layout'
 import ProductList from '../../components/ProductList'
-import { FormAccountFields } from '../../models'
+import useType from '../../hooks/useType'
+import { ProductTypeResponse } from '../../models'
 
 export default function AccountPage() {
   const tabs = [
@@ -17,9 +18,17 @@ export default function AccountPage() {
       content: <ProductList />,
     },
   ]
+
+  const { productType } = useType()
+
+  const productTypeAccount = productType.slice(17, 20).map((productType: ProductTypeResponse) => ({
+    name: productType.slug,
+    value: productType._id,
+    label: productType.name,
+  }))
   return (
     <CategoryLayout
-      formFields={FormAccountFields}
+      formFields={productTypeAccount}
       title="Gian hàng tài khoản"
       total={1528}
       tabs={tabs}
