@@ -1,4 +1,4 @@
-import { NavLink, NavLinks, NavLinksMobile } from '../../models'
+import { NavLink, NavLinks, NavLinksMobile, menuNavLinks } from '../../models'
 import Logo from '../../assets/images/logo.png'
 import { Link, useNavigate } from 'react-router-dom'
 import { AiOutlineUser } from 'react-icons/ai'
@@ -10,13 +10,17 @@ import { RoutePath } from '../../constants'
 import SignInDropDown from '../../pages/Registration/SigninDropdown'
 import useOutsideClick from '../../hooks/useOutSideClick'
 import useAuth from '../../hooks/useAuth'
+
+import { Typography } from 'antd'
+import authStorage from '../../utils/authStorage'
+
 export function NavigationBar() {
   const ref = useRef(null)
   const [openItems, setOpenItems] = useState<{ [key: string]: boolean }>({})
   const [isOpenMenuBar, setIsOpenMenuBar] = useState<boolean>(false)
   const [isOpenLoginDropDown, setIsOpenLoginDropDown] = useState<boolean>(false)
   const navigate = useNavigate()
-  const { isLogging } = useAuth()
+  const { user, handleLogout } = useAuth()
 
   const handleShowMenu = (item: NavLink) => {
     setOpenItems((prevOpenItems) => ({
@@ -43,6 +47,11 @@ export function NavigationBar() {
   useOutsideClick(ref, () => {
     setIsOpenLoginDropDown(false)
   })
+
+  const handleUserLogout = () => {
+    handleLogout({ refreshToken: authStorage.getRefreshToken() })
+    setIsOpenLoginDropDown(false)
+  }
 
   return (
     <>
@@ -118,7 +127,46 @@ export function NavigationBar() {
               <div
                 className={`transition-all z-100 bg-white w-300px absolute right-0 top-43px border`}
               >
-                {isLogging ? <div>Đã đăng nhâp </div> : <SignInDropDown />}
+                {user ? (
+                  <>
+                    <div className="flex px-5 py-14px border-b border-white-light hover:bg-white-light">
+                      <img
+                        src="https://taphoammo.net/images/avatars/user.svg"
+                        alt=""
+                        className="h-30px w-30px rounded-full mr-14px"
+                      />
+                      <div className="flex flex-col">
+                        <div className="text-black-light text-15px font-medium leading-5">
+                          {user.fullName || 'Người  dùng'}
+                        </div>
+                        <div className="text-14px leading-18px text-grey-500">{user.email}</div>
+                      </div>
+                    </div>
+                    <div className="overflow-y-auto rounded bg-white">
+                      <ul className="py-3">
+                        {menuNavLinks.map((menu, index) => (
+                          <li key={index}>
+                            <Link
+                              to={menu.path}
+                              className="flex items-center py-5px px-5  text-15px font-medium leading-5 text-gray-900 hover:bg-white-light"
+                            >
+                              {menu.title}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="py-3 border-t border-white-light">
+                      <div className="py-5px px-5 hover:bg-white-light" onClick={handleUserLogout}>
+                        <Typography.Text className=" text-15px font-medium leading-5 text-gray-900">
+                          Thoát
+                        </Typography.Text>
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <SignInDropDown onSetLoginDropdown={setIsOpenLoginDropDown} />
+                )}
               </div>
             )}
           </div>

@@ -1,6 +1,7 @@
 import { Button, Table } from 'antd'
 import { useState } from 'react'
 import ModalAddStall from '../Modal/ModalAddStall'
+import { StallLayout } from '../../../components/Layout'
 
 function StallManage() {
   const dataSource = [
@@ -74,24 +75,26 @@ function StallManage() {
   const [isOpenModalAddStall, setIsOpenModalAddStall] = useState(false)
 
   return (
-    <div className="m-4 max-w-full bg-[#ffff] pl-2">
-      <div className="flex items-center justify-between">
-        <p className="text-md	font-bold	mb-2 mt-3">Gian hàng</p>
-        <Button
-          type="primary"
-          className="bg-blue-700 mr-3"
-          onClick={() => setIsOpenModalAddStall(true)}
-        >
-          Thêm mới
-        </Button>
+    <StallLayout>
+      <div className="m-4 max-w-full bg-[#ffff] pl-2">
+        <div className="flex items-center justify-between">
+          <p className="text-md	font-bold	mb-2 mt-3">Gian hàng</p>
+          <Button
+            type="primary"
+            className="bg-blue-700 mr-3"
+            onClick={() => setIsOpenModalAddStall(true)}
+          >
+            Thêm mới
+          </Button>
+        </div>
+        <span>Bạn được tạo tối đa 5 gian hàng</span>
+        <Table dataSource={dataSource} columns={columns} />
+        <ModalAddStall
+          isOpenModalAddStall={isOpenModalAddStall}
+          setIsOpenModalAddStall={setIsOpenModalAddStall}
+        />
       </div>
-      <span>Bạn được tạo tối đa 5 gian hàng</span>
-      <Table dataSource={dataSource} columns={columns} />
-      <ModalAddStall
-        isOpenModalAddStall={isOpenModalAddStall}
-        setIsOpenModalAddStall={setIsOpenModalAddStall}
-      />
-    </div>
+    </StallLayout>
   )
 }
 

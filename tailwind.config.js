@@ -26,6 +26,9 @@ export default {
       },
     },
     extend: {
+      gap: {
+        '14px': '14px',
+      },
       fontSize: {
         '10px': '10px',
         '12px': '12px',
@@ -34,18 +37,22 @@ export default {
         '15px': '15px',
         '16px': '16px',
         '18px': '18px',
+        '28px': '28px',
       },
       lineHeight: {
         1: 1,
         '18px': '18px',
       },
       colors: {
+        'white-opacity': 'rgba(255,255,255,.4)',
         grey: {
+          50: 'rgba(255,255,255,.1)',
           100: '#ebebeb',
           200: '#f0f0f0',
           300: '#f7f7f7',
           400: '#ccc',
           500: '#b3b3b3',
+          700: '#e2e8f0',
           900: '#999',
         },
         light: 'rgba(255,255,255,.15)',
@@ -79,12 +86,14 @@ export default {
         '12px': '12px',
         '14px': '14px',
         '15px': '15px',
+        '30px': '30px',
         '34px': '34px',
         '35px': '35px',
         '55px': '55px',
         '190px': '190px',
         '200px': '200px',
         '255px': '255px',
+        '280px': '280px',
         '290px': '290px',
         '300px': '300px',
       },
@@ -92,6 +101,7 @@ export default {
         '14px': '14px',
         '15px': '15px',
         '27px': '27px',
+        '30px': '30px',
         '34px': '34px',
         '42px': '42px',
         '43px': '43px',
@@ -100,6 +110,7 @@ export default {
       },
       spacing: {
         '3px': '3px',
+        '5px': '5px',
         '7px': '7px',
         '9px': '9px',
         '10px': '10px',
@@ -114,11 +125,15 @@ export default {
         '52px': '52px',
         '54px': '54px',
         '140px': '140px',
+        '257px': '257px',
         '300px': '300px',
         '600px': '600px',
       },
       borderRadius: {
         1.5: '1.5px',
+      },
+      boxShadow: {
+        inset: '3px 0 0 0 #fff inset',
       },
       zIndex: {
         100: '99999',

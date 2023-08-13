@@ -1,3 +1,4 @@
+import { LogoutPayload, ROLE } from './../../models/Auth'
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { AuthState, LoginPayload, RegisterPayload } from '../../models'
 import userApi from '../../api/userApi'
@@ -27,11 +28,24 @@ export const login = createAsyncThunk(
   }
 )
 
+export const logout = createAsyncThunk(
+  'auth/logout',
+  async (payload: LogoutPayload, { rejectWithValue }) => {
+    try {
+      return await userApi.logout(payload)
+    } catch (error) {
+      return rejectWithValue(error)
+    }
+  }
+)
+
 const initialState: AuthState = {
-  user: null,
+  user: undefined,
   isLoading: false,
   email: '',
-  isLogging: false,
+  isLoadingRegister: false,
+  isLoadingLogout: false,
+  isAuthenticated: false,
 }
 
 const authSlice = createSlice({
@@ -41,17 +55,47 @@ const authSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(login.pending, (state) => {
       state.isLoading = true
-      state.isLogging = false
     })
     builder.addCase(login.fulfilled, (state, { payload }) => {
-      state.user = payload.data
-      state.isLogging = true
-
+      state.user = {
+        ...payload.data.user,
+        role: payload.data.user.role === 1 ? ROLE.ADMIN : ROLE.USER,
+      }
+      state.isLoading = false
+      state.isAuthenticated = true
       authStorage.saveToken(payload.data.accessToken, payload.data.refreshToken)
     })
     builder.addCase(login.rejected, (state) => {
       state.isLoading = false
-      state.isLogging = true
+    })
+
+    builder.addCase(register.pending, (state) => {
+      state.isLoadingRegister = true
+    })
+    builder.addCase(register.fulfilled, (state, { payload }) => {
+      state.user = {
+        ...payload.data.user,
+        role: payload.data.user.role === 1 ? ROLE.ADMIN : ROLE.USER,
+      }
+      state.isAuthenticated = true
+      state.isLoadingRegister = false
+
+      authStorage.saveToken(payload.data.accessToken, payload.data.refreshToken)
+    })
+    builder.addCase(register.rejected, (state) => {
+      state.isLoadingRegister = false
+    })
+
+    builder.addCase(logout.pending, (state) => {
+      state.isLoadingLogout = true
+    })
+    builder.addCase(logout.fulfilled, (state) => {
+      state.user = undefined
+      state.isAuthenticated = false
+      authStorage.destroyToken()
+    })
+    builder.addCase(logout.rejected, (state) => {
+      state.isLoadingLogout = false
     })
   },
 })
@@ -61,10 +105,11 @@ const authSlice = createSlice({
 export const authAsyncAction = {
   login,
   register,
+  logout,
 }
 
 const persistConfig = {
-  keyPrefix: 'taphoammo',
+  //keyPrefix: 'taphoammo',
   key: 'Auth',
   storage,
 }
