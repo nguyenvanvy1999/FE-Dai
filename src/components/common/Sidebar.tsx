@@ -18,7 +18,8 @@ interface SidebarProps {
   className: string
 }
 
-export default function Sidebar({ formFields, className }: SidebarProps) {
+export default function 
+Sidebar({ formFields, className }: SidebarProps) {
   const {
     handleSubmit,
     control,

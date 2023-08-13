@@ -2,11 +2,13 @@ import { MainLayout } from '../../components/Layout'
 import './product-detail.css'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Shortcuts from '../../components/Slider/Slider'
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai'
 import { Button, Modal, Input } from 'antd'
 import TextArea from 'antd/es/input/TextArea'
+import { useParams } from 'react-router-dom'
+import productApi from '../../api/productApi'
 
 type Tab = 'mota' | 'reviews' | 'api'
 
@@ -14,6 +16,18 @@ function ProductDetail() {
   const [quantity, setQuantity] = useState(1)
   const [activeTab, setActiveTab] = useState<Tab>('mota')
   const [showModal, setShowModal] = useState(false)
+
+  const { slug } = useParams();
+
+  useEffect(() => {
+    console.log("==slug==", slug)
+    if (!slug) return
+    async function getProd () {
+      const productDetail = await productApi.productDetail(`${slug}`);
+      console.log("==productDetail==", productDetail)
+    }
+    getProd();
+  }, [slug])
 
   const openModal = () => {
     setShowModal(true)
