@@ -1,4 +1,4 @@
-import { CategoryLayout } from '../../components/Layout'
+import { CategoryLayout } from '../../Layout'
 import ProductList from '../../components/ProductList'
 
 export default function BlockchainPage() {

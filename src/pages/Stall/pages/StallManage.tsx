@@ -1,7 +1,7 @@
 import { Button, Table } from 'antd'
 import { useState } from 'react'
 import ModalAddStall from '../Modal/ModalAddStall'
-import { StallLayout } from '../../../components/Layout'
+import { StallLayout } from '../../../Layout'
 
 function StallManage() {
   const dataSource = [

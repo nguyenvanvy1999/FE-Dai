@@ -1,4 +1,4 @@
-import { MainLayout } from '../../components/Layout'
+import { MainLayout } from '../../Layout'
 import './product-detail.css'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -17,16 +17,16 @@ function ProductDetail() {
   const [activeTab, setActiveTab] = useState<Tab>('mota')
   const [showModal, setShowModal] = useState(false)
 
-  const { slug } = useParams();
+  const { slug } = useParams()
 
   useEffect(() => {
-    console.log("==slug==", slug)
+    console.log('==slug==', slug)
     if (!slug) return
-    async function getProd () {
-      const productDetail = await productApi.productDetail(`${slug}`);
-      console.log("==productDetail==", productDetail)
+    async function getProd() {
+      const productDetail = await productApi.productDetail(`${slug}`)
+      console.log('==productDetail==', productDetail)
     }
-    getProd();
+    getProd()
   }, [slug])
 
   const openModal = () => {
@@ -59,19 +59,27 @@ function ProductDetail() {
     <MainLayout>
       <Modal
         visible={showModal}
-        onCancel={closeModal} 
+        onCancel={closeModal}
         footer={[
-          <Button key="cancel" className='bg-gray-200 rounded-sm text-black-100 font-semibold' onClick={closeModal}>
+          <Button
+            key="cancel"
+            className="bg-gray-200 rounded-sm text-black-100 font-semibold"
+            onClick={closeModal}
+          >
             Hủy
           </Button>,
-          <Button key="cancel" className="bg-green-600 rounded-sm text-white font-semibold" onClick={closeModal}>
+          <Button
+            key="cancel"
+            className="bg-green-600 rounded-sm text-white font-semibold"
+            onClick={closeModal}
+          >
             Gửi
           </Button>,
-        ]} 
+        ]}
       >
-        <div className="mt-10 mb-5"> 
+        <div className="mt-10 mb-5">
           <div className="title absolute top-0 left-0 right-0 h-12 border-b border-gray-200 flex items-center">
-            <h3 className='px-6 py-3 font-bold text-md'>Reseller</h3>
+            <h3 className="px-6 py-3 font-bold text-md">Reseller</h3>
           </div>
           <p className="text-green-600 text-sm">
             Trở thành reseller của gian hàng này, bạn sẽ được hưởng % doanh thu từ chiết khấu trên

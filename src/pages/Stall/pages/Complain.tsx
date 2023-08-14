@@ -1,5 +1,5 @@
 import { Table } from 'antd'
-import { StallLayout } from '../../../components/Layout'
+import { StallLayout } from '../../../Layout'
 
 function Complain() {
   const dataSource = [

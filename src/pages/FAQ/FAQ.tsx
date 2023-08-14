@@ -1,4 +1,4 @@
-import { MainLayout } from '../../components/Layout'
+import { MainLayout } from '../../Layout'
 import FAQItem from './FAQItem'
 
 const faqCustomer = [
@@ -42,80 +42,80 @@ const faqCustomer = [
     content:
       'Chính sách của chúng tôi sẽ giữ tiền của người bán 3 ngày, như vậy taphoammo đã gần như trở thành trung gian cho các bạn yên tâm giao dịch. Lưu ý, chúng tôi chỉ hổ trợ với những đơn hàng được mua trực tiếp trên trang, vì vậy để đảm bảo quyền lợi của mình cũng như hạn chế tình trạng lừa đảo tràn lan trên mạng xã hội hiện nay các bạn hãy đưa ra lựa chọn đúng đắn của mình nhé.',
   },
-] 
+]
 const faqSeller = [
-    {
-      title: 'Làm sao để đăng ký bán hàng?',
-      content:
-        'Hãy đăng nhập trước, sau đó chọn vào "Đăng ký bán hàng", nhập đầy đủ các thông tin để xác thực. Chúng mình sẽ duyệt qua để bạn có thể bán hàng trên trang.',
-    },
-    {
-      title: 'Làm sao để tạo một gian hàng?',
-      content:
-        'Đầu tiên hãy đăng ký để trở thành người bán hàng, vào mục "Quản lý gian hàng" để tạo một gian hàng mới, lưu ý chọn đúng danh mục hàng hóa.',
-    },
-    {
-      title: 'Làm sao để tối ưu gian hàng?',
-      content:
-        'Các bạn nên đầu tư vào hình ảnh gian hàng, các từ khóa tìm kiếm, tiêu đề, chú thích phải rõ ràng. Bước tiếp theo, để cho một kế hoạch lâu dài, hãy đảm bảo chất lượng hàng hóa. Chúng tôi đã tối ưu để cho gian hàng của bạn trở nên đẹp nhất khi được đưa lên các trang mạng xã hội, hãy tận dụng nó. Ngoài ra, thứ tự xếp hạng gian hàng sẽ được cập nhật hàng tuần dựa vào kết quả bán hàng của bạn.',
-    },
-    {
-      title: 'Làm sao gian hàng của tôi lên đầu trang?',
-      content:
-        'Tất cả sẽ dựa vào kết quả kinh doanh của bạn và đánh giá từ khách hàng. Xếp hạng sẽ được cập nhật mới vào mỗi tuần.',
-    },
-    {
-      title: 'Tiền tôi bán được sẽ giải quyết như thế nào?',
-      content:
-        'Trên mỗi đơn hàng thành công, tiền đó sẽ ở trạng thái "Pending" trong 3 ngày, nếu không có tranh chấp gì từ người mua, bạn có thể rút ngay số tiền đó về. Giới hạn rút các bạn vui lòng theo dõi trên trang.',
-    },
-    {
-      title: 'Mặt hàng nào bị cấm?',
-      content:
-        'Danh sách các mặt hàng không được bán trên trang sẽ liên tục được cập nhật trên trang, các bạn chú ý theo dõi. Chủ yếu các sản phẩm liên quan tới đánh cắp tài khoản người dùng ví dụ như các loại tài khoản ngân hàng, tài khoản fb, email có được nhờ các hành vi h.a.c.k, các hoạt động liên quan tới chính trị, tôn giáo...',
-    },
-    {
-      title: 'Chiết khấu cho đơn hàng như thế nào?',
-      content:
-        'Chúng tôi sẽ lấy chiết khấu trên mỗi đơn hàng bán được, mong các bạn hiểu cho mối quan hệ của 2 bên là cùng nhau phát triển. Ngoài ra, cơ chế reseller là một tùy chọn để các bạn có thể đẩy mạnh khả năng bán hàng, tất nhiên là bạn phải có chiết khấu cho bạn reseller đó.',
-    },
-    {
-      title: 'Làm sao để rút tiền?',
-      content: 'Đối với số dư đã được duyệt, bạn có thể tùy chọn rút về tài khoản.',
-    },
-    {
-      title: 'Làm sao tôi tin tưởng để hàngtrên trang của bạn?',
-      content:
-        'Bạn có 1 lựa chọn khác là tự tạo server để hàng hóa riêng và cung cấp API cho bên mình, đội ngũ kỹ thuật sẽ liên hệ để 2 bên map được với nhau. Tuy nhiên, vì mục đích phát triển lâu dài các bạn có thể thử lựa chọn tin tưởng.',
-    },
-    {
-      title: 'Làm sao tôi đổi hàng cho khách?',
-      content:
-        'Nếu đơn hàng của bạn có sản phẩm bị lỗi, hãy vào phần đơn hàng đã bán, đến mục đơn hàng cần bảo hành, chọn vào thao tác Bảo Hành -> nhập số lượng bảo hành. Hệ thống sẽ tự động tạo 1 mã giảm giá đúng với số lượng cần BH và gởi cho khách.',
-    },
-]; 
+  {
+    title: 'Làm sao để đăng ký bán hàng?',
+    content:
+      'Hãy đăng nhập trước, sau đó chọn vào "Đăng ký bán hàng", nhập đầy đủ các thông tin để xác thực. Chúng mình sẽ duyệt qua để bạn có thể bán hàng trên trang.',
+  },
+  {
+    title: 'Làm sao để tạo một gian hàng?',
+    content:
+      'Đầu tiên hãy đăng ký để trở thành người bán hàng, vào mục "Quản lý gian hàng" để tạo một gian hàng mới, lưu ý chọn đúng danh mục hàng hóa.',
+  },
+  {
+    title: 'Làm sao để tối ưu gian hàng?',
+    content:
+      'Các bạn nên đầu tư vào hình ảnh gian hàng, các từ khóa tìm kiếm, tiêu đề, chú thích phải rõ ràng. Bước tiếp theo, để cho một kế hoạch lâu dài, hãy đảm bảo chất lượng hàng hóa. Chúng tôi đã tối ưu để cho gian hàng của bạn trở nên đẹp nhất khi được đưa lên các trang mạng xã hội, hãy tận dụng nó. Ngoài ra, thứ tự xếp hạng gian hàng sẽ được cập nhật hàng tuần dựa vào kết quả bán hàng của bạn.',
+  },
+  {
+    title: 'Làm sao gian hàng của tôi lên đầu trang?',
+    content:
+      'Tất cả sẽ dựa vào kết quả kinh doanh của bạn và đánh giá từ khách hàng. Xếp hạng sẽ được cập nhật mới vào mỗi tuần.',
+  },
+  {
+    title: 'Tiền tôi bán được sẽ giải quyết như thế nào?',
+    content:
+      'Trên mỗi đơn hàng thành công, tiền đó sẽ ở trạng thái "Pending" trong 3 ngày, nếu không có tranh chấp gì từ người mua, bạn có thể rút ngay số tiền đó về. Giới hạn rút các bạn vui lòng theo dõi trên trang.',
+  },
+  {
+    title: 'Mặt hàng nào bị cấm?',
+    content:
+      'Danh sách các mặt hàng không được bán trên trang sẽ liên tục được cập nhật trên trang, các bạn chú ý theo dõi. Chủ yếu các sản phẩm liên quan tới đánh cắp tài khoản người dùng ví dụ như các loại tài khoản ngân hàng, tài khoản fb, email có được nhờ các hành vi h.a.c.k, các hoạt động liên quan tới chính trị, tôn giáo...',
+  },
+  {
+    title: 'Chiết khấu cho đơn hàng như thế nào?',
+    content:
+      'Chúng tôi sẽ lấy chiết khấu trên mỗi đơn hàng bán được, mong các bạn hiểu cho mối quan hệ của 2 bên là cùng nhau phát triển. Ngoài ra, cơ chế reseller là một tùy chọn để các bạn có thể đẩy mạnh khả năng bán hàng, tất nhiên là bạn phải có chiết khấu cho bạn reseller đó.',
+  },
+  {
+    title: 'Làm sao để rút tiền?',
+    content: 'Đối với số dư đã được duyệt, bạn có thể tùy chọn rút về tài khoản.',
+  },
+  {
+    title: 'Làm sao tôi tin tưởng để hàngtrên trang của bạn?',
+    content:
+      'Bạn có 1 lựa chọn khác là tự tạo server để hàng hóa riêng và cung cấp API cho bên mình, đội ngũ kỹ thuật sẽ liên hệ để 2 bên map được với nhau. Tuy nhiên, vì mục đích phát triển lâu dài các bạn có thể thử lựa chọn tin tưởng.',
+  },
+  {
+    title: 'Làm sao tôi đổi hàng cho khách?',
+    content:
+      'Nếu đơn hàng của bạn có sản phẩm bị lỗi, hãy vào phần đơn hàng đã bán, đến mục đơn hàng cần bảo hành, chọn vào thao tác Bảo Hành -> nhập số lượng bảo hành. Hệ thống sẽ tự động tạo 1 mã giảm giá đúng với số lượng cần BH và gởi cho khách.',
+  },
+]
 const faqCollaborators = [
-    {
-      title: 'Làm sao để trở thành reseller?',
-      content:
-        'Thành viên đã đăng ký thành công và cập nhật đầy đủ các thông tin cá nhân (tên, trang mạng xã hội, tài khoản ngân hàng - dùng để rút tiền...) đều có thể trở thành reseller trên trang. Hãy liên hệ với chủ shop và chủ động đề xuất phương án phân chia % phù hợp. Sau khi chủ shop duyệt và đồng ý, bạn sẽ nhận được link ref riêng để giới thiệu cho khách hàng.',
-    },
-    {
-      title: 'Làm sao tôi có thể bán hàng được?',
-      content:
-        'Đầu tiên, hãy xem danh sách các gian hàng. Những gian hàng cho phép resell sẽ có nút bấm cho reseller. Bạn cần chủ động thương lượng % phân chia lợi nhuận với chủ shop và đừng quên giới thiệu về bản thân. Sau khi chủ shop duyệt và đồng ý, bạn sẽ nhận được link ref riêng. Hãy giới thiệu link này cho khách hàng của bạn, và chiết khấu sẽ được chia tự động sau khi khách hàng hoàn tất mua 1 đơn hàng.',
-    },
-    {
-      title: 'Tôi có thể rút tiền bán được không?',
-      content:
-        'Có. Tương tự như chủ shop, tiền chiết khấu từ đơn hàng sẽ bị giữ trong 3 ngày trên trang. Sau đó, bạn hoàn toàn có khả năng yêu cầu rút số tiền đó về nếu không có tranh chấp gì từ đơn hàng.',
-    },
-    {
-      title: 'Tôi có được thưởng thêm không?',
-      content:
-        'Có. Sau mỗi tháng, dựa vào doanh thu bán hàng của bạn, chúng tôi sẽ thưởng thêm % nếu doanh thu đó đạt các mốc đã được đề ra. Chi tiết về mốc thưởng sẽ được cung cấp cho bạn.',
-    },
-  ];
+  {
+    title: 'Làm sao để trở thành reseller?',
+    content:
+      'Thành viên đã đăng ký thành công và cập nhật đầy đủ các thông tin cá nhân (tên, trang mạng xã hội, tài khoản ngân hàng - dùng để rút tiền...) đều có thể trở thành reseller trên trang. Hãy liên hệ với chủ shop và chủ động đề xuất phương án phân chia % phù hợp. Sau khi chủ shop duyệt và đồng ý, bạn sẽ nhận được link ref riêng để giới thiệu cho khách hàng.',
+  },
+  {
+    title: 'Làm sao tôi có thể bán hàng được?',
+    content:
+      'Đầu tiên, hãy xem danh sách các gian hàng. Những gian hàng cho phép resell sẽ có nút bấm cho reseller. Bạn cần chủ động thương lượng % phân chia lợi nhuận với chủ shop và đừng quên giới thiệu về bản thân. Sau khi chủ shop duyệt và đồng ý, bạn sẽ nhận được link ref riêng. Hãy giới thiệu link này cho khách hàng của bạn, và chiết khấu sẽ được chia tự động sau khi khách hàng hoàn tất mua 1 đơn hàng.',
+  },
+  {
+    title: 'Tôi có thể rút tiền bán được không?',
+    content:
+      'Có. Tương tự như chủ shop, tiền chiết khấu từ đơn hàng sẽ bị giữ trong 3 ngày trên trang. Sau đó, bạn hoàn toàn có khả năng yêu cầu rút số tiền đó về nếu không có tranh chấp gì từ đơn hàng.',
+  },
+  {
+    title: 'Tôi có được thưởng thêm không?',
+    content:
+      'Có. Sau mỗi tháng, dựa vào doanh thu bán hàng của bạn, chúng tôi sẽ thưởng thêm % nếu doanh thu đó đạt các mốc đã được đề ra. Chi tiết về mốc thưởng sẽ được cung cấp cho bạn.',
+  },
+]
 
 function FAQ() {
   return (

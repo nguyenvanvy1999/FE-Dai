@@ -48,4 +48,19 @@ export const RoutePath = Object.freeze({
   ServiceOtherPage: '/danh-muc/dich-vu-khac',
   LikeProductPage: 'gian-hang-yeu-thich',
   Forgotpassword: '/quen-mat-khau',
+
+  // Admin
+  DashboardPage: '/admin',
+  ManagerProductPage: '/admin/quan-ly-san-pham',
+  ManagerServicePage: '/admin/quan-ly-dich-vu',
+  ManagerBussinessTypePage: '/admin/quan-ly-loai-kinh doanh',
+  ManagerShopTypePage: '/admin/quan-ly-loai-cua-hang',
+  ManagerProductTypePage: '/admin/quan-ly-loai-san-pham',
+  ManagerShopPage: '/admin/quan-ly-cua-hang',
+  ManagerUserPage: '/admin/quan-ly-nguoi-dung',
+  ManagerDiscountPage: '/admin/quan-ly-giam-gia',
+  ManagerOrderComplainPage: '/admin/quan-ly-hoa-don-danh-gia',
+  ManagerOrderPage: '/admin/quan-ly-hoa-don',
+  ManagerShopReviewPage: '/admin/quan-ly-danh-gia-shop',
+  ManagerShopEvalutionPage: '/admin/quan-ly-danh-gia-cua-hang',
 })

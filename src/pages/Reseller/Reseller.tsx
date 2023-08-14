@@ -1,4 +1,4 @@
-import { MainLayout } from '../../components/Layout'
+import { MainLayout } from '../../Layout'
 function Reseller() {
   return (
     <MainLayout>
@@ -41,7 +41,7 @@ function Reseller() {
           </div>
         </div>
         <div className="mt-4 mb-20">
-          <p className='text-green-600 text-sm'>
+          <p className="text-green-600 text-sm">
             Lưu ý: Khách chỉ cần vào 1 lần bằng link referer của bạn, chúng tôi sẽ lưu cookie và áp
             dụng chia chiết khấu cho tất cả các đơn hàng về sau ( trong trường hợp ref của bạn vẫn
             được chủ shop duyệt).

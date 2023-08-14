@@ -1,9 +1,9 @@
 import Description from './Description/Description'
 import Shortcuts from '../../components/Slider/Slider'
-import { MainLayout } from '../../components/Layout'
+import { MainLayout } from '../../Layout'
 import CategoryList from '../../containers/home/CategoryList'
 import Search from '../../containers/home/Search'
-import { useState, useEffect } from 'react'  
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 function HomePage() {
@@ -51,13 +51,13 @@ function HomePage() {
       imageSrc: 'https://taphoammo.net/images/categories/more-service.png',
       description: 'Các dịch vụ MMO phổ biến khác hiện nay',
     },
-  ] 
+  ]
 
-  const [data, setData] = useState([]) 
+  const [data, setData] = useState([])
 
   useEffect(() => {
     fetchData()
-  }, []) 
+  }, [])
 
   const fetchData = async () => {
     try {
@@ -76,7 +76,7 @@ function HomePage() {
       <div className="h-108">
         <CategoryList heading="-- DANH SÁCH SẢN PHẨM --" items={categoryProducts} />
         <CategoryList heading="-- DANH SÁCH DỊCH VỤ  --" items={categoryServices} />
-        <Shortcuts heading="Lôi tắt" /> 
+        <Shortcuts heading="Lôi tắt" />
         <Description />
       </div>
     </MainLayout>

@@ -1,5 +1,5 @@
 import { Button, Form, Input, Select, Table } from 'antd'
-import { StallLayout } from '../../../components/Layout'
+import { StallLayout } from '../../../Layout'
 const dataSource = [
   {
     key: '1',

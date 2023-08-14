@@ -1,7 +1,7 @@
 import { Button, Table } from 'antd'
 import ModalAddPromotion from '../Modal/ModalAddPromotion'
 import { useState, useEffect } from 'react'
-import { StallLayout } from '../../../components/Layout'
+import { StallLayout } from '../../../Layout'
 import axios from 'axios'
 import authStorage from '../../../utils/authStorage'
 import useDiscount from '../../../hooks/useDiscount'

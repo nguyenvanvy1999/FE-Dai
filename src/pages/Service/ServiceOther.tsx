@@ -1,5 +1,5 @@
 import ProductList from '../../components/ProductList'
-import { CategoryLayout } from '../../components/Layout'
+import { CategoryLayout } from '../../Layout'
 
 export interface ServiceOtherProps {}
 
@@ -18,11 +18,5 @@ export default function ServiceOther() {
       content: <ProductList />,
     },
   ]
-  return (
-    <CategoryLayout
-      title="Gian hàng dịch vụ khác"
-      total={1528}
-      tabs={tabs}
-    />
-  )
+  return <CategoryLayout title="Gian hàng dịch vụ khác" total={1528} tabs={tabs} />
 }

@@ -1,6 +1,6 @@
 import React from 'react'
-import SideBar from '../../pages/Stall/components/SideBar'
-import Header from '../../pages/Stall/components/Header'
+import SideBar from '../pages/Stall/components/SideBar'
+import Header from '../pages/Stall/components/Header'
 
 export interface StallLayoutProps {
   children?: React.ReactNode

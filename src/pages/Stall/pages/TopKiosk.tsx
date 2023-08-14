@@ -1,4 +1,4 @@
-import { StallLayout } from '../../../components/Layout'
+import { StallLayout } from '../../../Layout'
 
 function TopKiosk() {
   return (

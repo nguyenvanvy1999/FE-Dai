@@ -12,7 +12,7 @@ import {
   Legend,
 } from 'chart.js'
 import { DatePicker } from 'antd'
-import { StallLayout } from '../../../components/Layout'
+import { StallLayout } from '../../../Layout'
 ChartJs.register(LineElement, PointElement, CategoryScale, LinearScale, Tooltip, Legend)
 function Sales() {
   const data = {
