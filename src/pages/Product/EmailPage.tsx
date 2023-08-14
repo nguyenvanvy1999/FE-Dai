@@ -1,4 +1,4 @@
-import { CategoryLayout } from '../../components/Layout'
+import { CategoryLayout } from '../../Layout'
 import ProductList from '../../components/ProductList'
 import useType from '../../hooks/useType'
 

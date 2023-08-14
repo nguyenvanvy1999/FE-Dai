@@ -1,4 +1,4 @@
-import { MainLayout } from '../../components/Layout'
+import { MainLayout } from '../../Layout'
 import ProductLike from '../../components/ProductLike'
 
 export default function WishListPage() {

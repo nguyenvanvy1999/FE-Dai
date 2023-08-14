@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { Footer, Header } from '../common'
+import { Footer, Header } from '../components/common'
 import Marquee from 'react-fast-marquee'
-import Sidebar from '../common/Sidebar'
-import { FormField, Tab } from '../../models'
-import VerticalTab from '../vertical-tab'
+import Sidebar from '../components/common/Sidebar'
+import { FormField, Tab } from '../models'
+import VerticalTab from '../components/vertical-tab'
 import { ImEqualizer } from 'react-icons/im'
-import useType from '../../hooks/useType'
+import useType from '../hooks/useType'
 
 export interface CategoryLayoutProps {
   children?: React.ReactNode

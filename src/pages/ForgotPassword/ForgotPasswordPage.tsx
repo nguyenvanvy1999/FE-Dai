@@ -1,5 +1,5 @@
 import { Card } from 'antd'
-import { MainLayout } from '../../components/Layout'
+import { MainLayout } from '../../Layout'
 import { Typography } from 'antd'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import * as yup from 'yup'

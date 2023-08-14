@@ -1,5 +1,5 @@
 import { Button, Form, Input, Select, Table } from 'antd'
-import { StallLayout } from '../../../components/Layout'
+import { StallLayout } from '../../../Layout'
 import useOrder from '../../../hooks/useOrder'
 import { useEffect } from 'react'
 import Column from 'antd/es/table/Column'

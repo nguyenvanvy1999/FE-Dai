@@ -1,5 +1,5 @@
 import { AiOutlineEye, AiOutlineLike } from 'react-icons/ai'
-import { MainLayout } from '../../components/Layout'
+import { MainLayout } from '../../Layout'
 import Button from '../../components/Button'
 import Image from '../../components/Image'
 import { FaRegComments } from 'react-icons/fa'

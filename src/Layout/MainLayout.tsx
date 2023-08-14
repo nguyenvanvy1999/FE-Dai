@@ -1,5 +1,5 @@
 import React from 'react'
-import { Footer, Header } from '../common'
+import { Footer, Header } from '../components/common'
 import Marquee from 'react-fast-marquee'
 
 export interface MainLayoutProps {
