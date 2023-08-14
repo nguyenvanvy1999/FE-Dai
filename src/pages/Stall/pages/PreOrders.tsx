@@ -1,5 +1,5 @@
 import { Button, Input, Table } from 'antd'
-import { StallLayout } from '../../../components/Layout'
+import { StallLayout } from '../../../Layout'
 
 function PreOrders() {
   const dataSource = [

@@ -1,6 +1,6 @@
 import ProductList from '../../components/ProductList'
 
-import { CategoryLayout } from '../../components/Layout'
+import { CategoryLayout } from '../../Layout'
 
 export interface ServiceSoftwareProps {}
 

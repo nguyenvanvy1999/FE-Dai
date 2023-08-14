@@ -37,6 +37,17 @@ import ResellerManage from './pages/Stall/pages/ResellerManage'
 import PrivateRoute from './routes/PrivateRoute'
 import { ROLE } from './models'
 import ProductOtherPage from './pages/Product/ProductOtherPage'
+import DashboardPage from './pages/admin/pages/DashboardPage/DashboardPage'
+import ManagerProductPage from './pages/admin/pages/ProductPage/ManagerProductPage'
+import ManagerProductTypePage from './pages/admin/pages/ProductType/ManagerProductType'
+import ManagerShopPage from './pages/admin/pages/ShopPage/ManagerShopPage'
+import ManagerShopTypePage from './pages/admin/pages/ShopTypePage/ManagerShopTypePage'
+import ManagerShopEvalution from './pages/admin/pages/ShopEvalutionPage/ManagerShopEvalutionPage'
+import ManagerReviewShopPage from './pages/admin/pages/ShopReviewPage/ManagerReviewShopPage'
+import ManagerDiscountPage from './pages/admin/pages/DiscountPage/ManagerDiscountPage'
+import ManagerUserPage from './pages/admin/pages/UserPage/ManagerUserPage'
+import NotFoundPage from './pages/NotFound/NotFoundPage'
+import ManagerOrderPage from './pages/admin/pages/Order/ManagerOrderPage'
 
 function App() {
   return (
@@ -162,6 +173,92 @@ function App() {
           <Route path={RoutePath.OrderItemPage} element={<OderItem />} />
           <Route path={RoutePath.PaymentsPage} element={<Payment />} />
         </Route>
+
+        {/* Admin */}
+        {/* //<Route path={RoutePath.DashboardPage} element={<DashboardPage />} /> */}
+        <Route
+          path={RoutePath.DashboardPage}
+          element={
+            <PrivateRoute roles={[ROLE.ADMIN]}>
+              <DashboardPage />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path={RoutePath.ManagerProductPage}
+          element={
+            <PrivateRoute roles={[ROLE.ADMIN]}>
+              <ManagerProductPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path={RoutePath.ManagerProductTypePage}
+          element={
+            <PrivateRoute roles={[ROLE.ADMIN]}>
+              <ManagerProductTypePage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path={RoutePath.ManagerShopPage}
+          element={
+            <PrivateRoute roles={[ROLE.ADMIN]}>
+              <ManagerShopPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path={RoutePath.ManagerShopTypePage}
+          element={
+            <PrivateRoute roles={[ROLE.ADMIN]}>
+              <ManagerShopTypePage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path={RoutePath.ManagerShopEvalutionPage}
+          element={
+            <PrivateRoute roles={[ROLE.ADMIN]}>
+              <ManagerShopEvalution />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path={RoutePath.ManagerShopReviewPage}
+          element={
+            <PrivateRoute roles={[ROLE.ADMIN]}>
+              <ManagerReviewShopPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path={RoutePath.ManagerDiscountPage}
+          element={
+            <PrivateRoute roles={[ROLE.ADMIN]}>
+              <ManagerDiscountPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path={RoutePath.ManagerUserPage}
+          element={
+            <PrivateRoute roles={[ROLE.ADMIN]}>
+              <ManagerUserPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path={RoutePath.OrderManage}
+          element={
+            <PrivateRoute roles={[ROLE.ADMIN]}>
+              <ManagerOrderPage />
+            </PrivateRoute>
+          }
+        />
+
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>
   )

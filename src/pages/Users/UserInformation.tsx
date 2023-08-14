@@ -1,6 +1,6 @@
-import Button from "../../components/Button";
-import { MainLayout } from "../../components/Layout";
-import ProgressBar from "../../components/ProgressBar";
+import Button from '../../components/Button'
+import { MainLayout } from '../../Layout'
+import ProgressBar from '../../components/ProgressBar'
 
 function LogSignin() {
   return (
@@ -10,9 +10,7 @@ function LogSignin() {
         <span className="px-1 bg-yellow-400 text-min">07-08-2022</span>
         <span className="ml-2 px-1 bg-green-300 text-min">IP: 14.234.178.5</span>
       </div>
-      <div className="text-min">
-        Device: Chrome 115 on OS X
-      </div>
+      <div className="text-min">Device: Chrome 115 on OS X</div>
     </div>
   )
 }
@@ -29,46 +27,45 @@ function Section() {
       </div>
 
       <div>
-      <hr className="bg-gray-400 mx-20 mt-10" />
-      <div className="grid grid-cols-2 mt-5">
-        <div className="font-semibold text-center">Tài khoản</div>
-        <div className="text-gray-400 text-center">@bentlee_upjwuq</div>
+        <hr className="bg-gray-400 mx-20 mt-10" />
+        <div className="grid grid-cols-2 mt-5">
+          <div className="font-semibold text-center">Tài khoản</div>
+          <div className="text-gray-400 text-center">@bentlee_upjwuq</div>
+        </div>
       </div>
-    </div>
 
-    <div>
-      <hr className="bg-gray-400 mx-20 mt-10" />
-      <div className="grid grid-cols-2 mt-5">
-        <div className="font-semibold text-center">Tài khoản</div>
-        <div className="text-gray-400 text-center">@bentlee_upjwuq</div>
+      <div>
+        <hr className="bg-gray-400 mx-20 mt-10" />
+        <div className="grid grid-cols-2 mt-5">
+          <div className="font-semibold text-center">Tài khoản</div>
+          <div className="text-gray-400 text-center">@bentlee_upjwuq</div>
+        </div>
       </div>
-    </div>
 
-    <div>
-      <hr className="bg-gray-400 mx-20 mt-10" />
-      <div className="grid grid-cols-2 mt-5">
-        <div className="font-semibold text-center">Tài khoản</div>
-        <div className="text-gray-400 text-center">@bentlee_upjwuq</div>
+      <div>
+        <hr className="bg-gray-400 mx-20 mt-10" />
+        <div className="grid grid-cols-2 mt-5">
+          <div className="font-semibold text-center">Tài khoản</div>
+          <div className="text-gray-400 text-center">@bentlee_upjwuq</div>
+        </div>
       </div>
-    </div>
 
-    <div>
-      <hr className="bg-gray-400 mx-20 mt-10" />
-      <div className="grid grid-cols-2 mt-5">
-        <div className="font-semibold text-center">Tài khoản</div>
-        <div className="text-gray-400 text-center">@bentlee_upjwuq</div>
+      <div>
+        <hr className="bg-gray-400 mx-20 mt-10" />
+        <div className="grid grid-cols-2 mt-5">
+          <div className="font-semibold text-center">Tài khoản</div>
+          <div className="text-gray-400 text-center">@bentlee_upjwuq</div>
+        </div>
       </div>
-    </div>
 
-    <div>
-      <hr className="bg-gray-400 mx-20 mt-10" />
-      <div className="grid grid-cols-2 mt-5">
-        <div className="font-semibold text-center">Tài khoản</div>
-        <div className="text-gray-400 text-center">@bentlee_upjwuq</div>
+      <div>
+        <hr className="bg-gray-400 mx-20 mt-10" />
+        <div className="grid grid-cols-2 mt-5">
+          <div className="font-semibold text-center">Tài khoản</div>
+          <div className="text-gray-400 text-center">@bentlee_upjwuq</div>
+        </div>
       </div>
-    </div>
     </>
-    
   )
 }
 
@@ -83,7 +80,9 @@ function UserInformation() {
             </div>
             <div className="w-full px-5 text-center">
               <ProgressBar percent={50} />
-              <div className="text-red-500 mt-1">Hãy mua/bán thêm 100.000đ để đạt level tiếp theo.</div>
+              <div className="text-red-500 mt-1">
+                Hãy mua/bán thêm 100.000đ để đạt level tiếp theo.
+              </div>
             </div>
           </div>
           <Section />
@@ -94,7 +93,10 @@ function UserInformation() {
 
         <div className="rounded-lg">
           <div className="border border-gray-300 text-center flex flex-col items-center rounded-lg py-5">
-            <img src="https://taphoammo.net/images/avatars/user.svg" className="rounded-full w-48 h-48"  />
+            <img
+              src="https://taphoammo.net/images/avatars/user.svg"
+              className="rounded-full w-48 h-48"
+            />
             <div className="text-lg text-gray-400 mt-7">@bentlee_upjwuq</div>
             <div className="text-min text-gray-400">Online 1 phút trước.</div>
           </div>
@@ -108,4 +110,4 @@ function UserInformation() {
   )
 }
 
-export default UserInformation;
+export default UserInformation

@@ -1,4 +1,4 @@
-import { MainLayout } from '../../components/Layout'
+import { MainLayout } from '../../Layout'
 function Authen2FA() {
   return (
     <MainLayout>
@@ -6,7 +6,7 @@ function Authen2FA() {
         <h5 className="text-md font-bold">Authenticator - Lấy mã code từ chuỗi 2FA</h5>
         <div className="mb-10">
           <div className="flex flex-col">
-            <label className='text-gray-700 my-3'>Chuỗi mã 2FA</label>
+            <label className="text-gray-700 my-3">Chuỗi mã 2FA</label>
             <input className="border border-gray-300 px-4 py-2 rounded-sm" id="secret_key" />
           </div>
         </div>
@@ -45,17 +45,17 @@ function Authen2FA() {
           </div>
         </div>
         <div className="p-4 border border-gray-200 mt-8 mb-8 rounded-sm">
-          <ul className='pl-4'>
-            <li className='list-disc text-green-600'>
+          <ul className="pl-4">
+            <li className="list-disc text-green-600">
               Authenticator là một ứng dụng tạo ra mã 2FA (mã code gồm 6 số ngẫu nhiên thay đổi ngẫu
               nhiên mỗi 30 giây) và được thiết kế để chỉ có bạn mới đăng nhập vào tài khoản của bạn
               được, kể cả nếu như có người khác biết mật khẩu của bạn.
             </li>
-            <li className='list-disc text-green-600'>
+            <li className="list-disc text-green-600">
               Khi bạn đăng nhập vào tài khoản, có yêu cầu xác thực 2 yếu tố bằng chuỗi 2FA, bạn buộc
               phải sử dụng Authenticator để nhận mã đăng nhập
             </li>
-            <li className='list-disc text-green-600' >
+            <li className="list-disc text-green-600">
               Các gian hàng trên Tạp hóa MMO bán các sản phẩm thường kèm theo 2FA, hãy dùng ứng dụng
               này để lấy mã đăng nhập nhé.
             </li>
