@@ -116,7 +116,7 @@ export const MenuAdminManageStore = [
   }, 
   {
     key: 'Management Review Shop',
-    label: 'Management Review Shop',
+    label: 'Đánh giá cửa hàng',
     path: RoutePath.ManagerShopReviewPage,
     icon: <FaRocketchat />,
   },
