@@ -1,17 +1,43 @@
 import * as React from 'react'
-import Sidebar from '../pages/admin/components/common/Sidebar'
+// import Sidebar from '../pages/admin/components/common/Sidebar' 
+import Sidebar from '../pages/Stall/components/SideBar'
 import Header from '../pages/admin/components/common/Header'
-import Footer from '../pages/admin/components/common/Footer'
+import Footer from '../pages/admin/components/common/Footer' 
+import { MenuAdminManageUsers, MenuAdminManageProduct, MenuAdminManageDashBoard, MenuAdminManageStore, MenuAdminManageInvoice } from '../constants/navigationSidebarStall'
+
 
 export interface AdminLayoutProps {
   children: React.ReactNode
 }
 
-export default function AdminLayout({ children }: AdminLayoutProps) {
+export default function AdminLayout({ children }: AdminLayoutProps) { 
+  const categoryLists = [
+    {
+      label: "DashBoard",
+      categories: MenuAdminManageDashBoard,
+    },
+    {
+      label: "Manage Product",
+      categories: MenuAdminManageProduct,
+    },
+    {
+      label: "Manage Store",
+      categories: MenuAdminManageStore,
+    },
+    {
+      label: "Manage Invoice",
+      categories: MenuAdminManageInvoice,
+    },
+    {
+      label: "Manage Users",
+      categories: MenuAdminManageUsers,
+    },
+    // Add more category lists as needed
+  ];
   return (
     <>
       <div className="flex">
-        <Sidebar />
+        <Sidebar categoryLists={categoryLists}/>
         <div className="w-full">
           <Header />
           <div style={{ height: '100vh', paddingLeft: '15px' }}>{children}</div>
