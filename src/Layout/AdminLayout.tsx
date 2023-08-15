@@ -39,8 +39,8 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
       <div className="flex">
         <Sidebar categoryLists={categoryLists}/>
         <div className="w-full">
-          <Header />
-          <div style={{ height: '100vh', paddingLeft: '15px' }}>{children}</div>
+          <Header/>
+          <div className='p-3 bg-[#c9cfd6]'  style={{ height: '100vh'}}>{children}</div>
           <Footer />
         </div>
       </div>

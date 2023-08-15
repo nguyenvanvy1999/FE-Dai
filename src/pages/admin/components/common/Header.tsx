@@ -43,7 +43,7 @@ export default function Header() {
   ]
 
   return (
-    <div className="border-b border-x-grey-100 w-full mb-3 py-4 pl-3 flex justify-between">
+    <div className="border-b border-x-grey-100 w-full py-4 pl-3 flex justify-between">
       <Button type="text" className="text-black-100 h-full">
         <HiBars3 size={24} />
       </Button>
