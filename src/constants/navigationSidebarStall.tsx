@@ -95,13 +95,13 @@ export const MenuAdminManageDashBoard = [
 export const MenuAdminManageProduct = [
   {
     key: 'Product Management List',
-    label: 'Product Management List',
+    label: 'Danh sách sản phẩm',
     path: RoutePath.ManagerProductPage,
     icon: <FaClipboardList />,
   },
   {
     key: 'Product Management Type',
-    label: 'Product Management Type',
+    label: 'Loại sản phẩm',
     path: RoutePath.ManagerProductTypePage,
     icon: <FaClipboardList />,
   },
@@ -110,25 +110,25 @@ export const MenuAdminManageProduct = [
 export const MenuAdminManageStore = [
   {
     key: 'Management Shop',
-    label: 'Management Shop',
+    label: 'Quản lý cửa hàng',
     path: RoutePath.ManagerShopPage,
     icon: <FaStore />,
   }, 
   {
-    key: 'Management Review Shop',
-    label: 'Đánh giá cửa hàng',
+    key: 'Review Shop',
+    label: 'Review Shop',
     path: RoutePath.ManagerShopReviewPage,
     icon: <FaRocketchat />,
   },
   {
     key: 'Management Eval Shop',
-    label: 'Management Eval Shop',
+    label: 'Evaluation Shop',
     path: RoutePath.ManagerShopEvalutionPage,
     icon: <FaDna />,
   },
   {
     key: 'Management Type Shop',
-    label: 'Management Type Shop',
+    label: 'Loại cửa hàng',
     path: RoutePath.ManagerShopTypePage,
     icon: <FaShopify />,
   },
@@ -136,7 +136,7 @@ export const MenuAdminManageStore = [
 export const MenuAdminManageInvoice = [
   {
     key: 'Management Invoice',
-    label: 'Management Invoice',
+    label: 'Đơn hàng',
     path: RoutePath.CheckLiveFB,
     icon: <FaFileInvoice />,
   },
@@ -144,7 +144,7 @@ export const MenuAdminManageInvoice = [
 export const MenuAdminManageUsers = [
   {
     key: 'Management Users',
-    label: 'Management Users',
+    label: 'Người dùng',
     path: RoutePath.ManagerUserPage,
     icon: <FaUsers />,
   },

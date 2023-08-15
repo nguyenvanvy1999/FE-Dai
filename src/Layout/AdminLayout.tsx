@@ -17,19 +17,19 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
       categories: MenuAdminManageDashBoard,
     },
     {
-      label: "Manage Product",
+      label: "Quản lí sản phẩm",
       categories: MenuAdminManageProduct,
     },
     {
-      label: "Manage Store",
+      label: "Quản lí cửa hàng",
       categories: MenuAdminManageStore,
     },
     {
-      label: "Manage Invoice",
+      label: "Quản lí đơn hàng",
       categories: MenuAdminManageInvoice,
     },
     {
-      label: "Manage Users",
+      label: "Quản lí người dùng",
       categories: MenuAdminManageUsers,
     },
     // Add more category lists as needed
