@@ -250,7 +250,7 @@ function App() {
           }
         />
         <Route
-          path={RoutePath.OrderManage}
+          path={RoutePath.ManagerOrderPage}
           element={
             <PrivateRoute roles={[ROLE.ADMIN]}>
               <ManagerOrderPage />
