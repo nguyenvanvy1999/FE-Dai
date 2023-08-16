@@ -137,7 +137,7 @@ export const MenuAdminManageInvoice = [
   {
     key: 'Management Invoice',
     label: 'Đơn hàng',
-    path: RoutePath.CheckLiveFB,
+    path: RoutePath.ManagerOrderPage,
     icon: <FaFileInvoice />,
   },
 ]
