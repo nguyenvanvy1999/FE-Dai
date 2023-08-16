@@ -34,7 +34,8 @@ export default function ManagerShopEvalution() {
       title: 'Tạo bởi',
       dataIndex: 'createdBy',
       key: 'createdBy',
-    },
+    }, 
+    
   ]
   return (
     <AdminLayout>
