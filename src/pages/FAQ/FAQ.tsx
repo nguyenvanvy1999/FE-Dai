@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { MainLayout } from '../../Layout'
 import FAQItem from './FAQItem'
 
@@ -122,9 +123,9 @@ function FAQ() {
     <MainLayout>
       <h2 className="text-lg font-bold">Câu hỏi thường gặp</h2>
       <div className="mb-1">
-        <a className="text-sm text-green-600 " target="_blank" href="/quy-dinh.html">
+        <Link className="text-sm text-green-600 " target="_blank" to="/quy-dinh">
           Xem thêm &gt;&gt; Điều khoản sử dụng
-        </a>
+        </Link>
       </div>
       <FAQItem heading="Người mua" faqList={faqCustomer} />
       <FAQItem heading="Người bán" faqList={faqSeller} />
