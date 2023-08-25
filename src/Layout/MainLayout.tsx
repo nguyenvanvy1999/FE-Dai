@@ -19,7 +19,7 @@ export function MainLayout({ children }: MainLayoutProps) {
         hàng và báo cho bên mình nhé, vì sản phẩm bạn mua có thể đã từng bán cho người khác trên
         sàn.
       </Marquee>
-      <div className="container mx-auto pt-8 px-15px">{children}</div>
+      <div className="container mx-auto px-15px">{children}</div>
       <Footer />
     </div>
   )

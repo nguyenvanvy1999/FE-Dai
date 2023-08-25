@@ -12,10 +12,10 @@ export const InformationList: Information[] = [
   },
   {
     content: 'Câu hỏi thường gặp',
-    path: '',
+    path: '/cau-hoi-thuong-gap',
   },
   {
     content: 'Điều khoản sử dụng',
-    path: '',
+    path: '/quy-dinh',
   },
 ]
