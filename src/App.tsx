@@ -48,6 +48,7 @@ import ManagerDiscountPage from './pages/admin/pages/DiscountPage/ManagerDiscoun
 import ManagerUserPage from './pages/admin/pages/UserPage/ManagerUserPage'
 import NotFoundPage from './pages/NotFound/NotFoundPage'
 import ManagerOrderPage from './pages/admin/pages/Order/ManagerOrderPage'
+import Regulation from './pages/Regulation/Regulation'
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function App() {
       <Routes>
         <Route path={RoutePath.HomePage} element={<HomePage />} />
         <Route path={RoutePath.FAQ} element={<FAQ />} />
+        <Route path={RoutePath.Regulation} element={<Regulation />} />
         <Route path={RoutePath.Authen2FA} element={<Authen2FA />} />
         <Route path={RoutePath.Reseller} element={<Reseller />} />
         <Route path={RoutePath.CheckLiveFB} element={<CheckLiveFB />} />
