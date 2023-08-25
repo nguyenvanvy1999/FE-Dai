@@ -51,7 +51,6 @@ export default function ManagerReviewShopPage() {
             </Button>
           </div>
         </div>
-        <span>Bạn được tạo tối đa 5 gian hàng</span>
         <Table dataSource={[]} columns={columns} />
         {/* <ModalAddStall
           isOpenModalAddStall={isOpenModalAddStall}
